@@ -11,3 +11,5 @@ Apply these rules when writing or editing code in this repository.
 
 - Put type declarations (`type`) at the **end** of the file.
 - for type declaration prefer `type` over `interface`
+- add comments only if its needed
+- use alias for imports

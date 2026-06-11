@@ -1,3 +1,4 @@
+import { asset } from "#/shared/asset";
 import { classnames } from "#/shared/classnames";
 import type { LawType } from "../../laws.config";
 import css from "./Price.module.css";
@@ -12,7 +13,7 @@ const Price = ({ law, unaffordable, disabled }: PriceProps) => {
     <div className={css.cost}>
       <img
         className={css.icon}
-        src="/img/resource/law.png"
+        src={asset("img/resource/law.png")}
         alt="law"
         draggable={false}
       />

@@ -1,4 +1,5 @@
 import { useLawsStore } from "#/features/laws/laws.store";
+import { asset } from "#/shared/asset";
 import { state$ } from "#/shared/lawBus";
 import { useObservable } from "#/shared/useObservable";
 import css from "./LawLvlBar.module.css";
@@ -23,7 +24,7 @@ const LawLvlBar = () => {
       <div className={css.left}>
         <img
           className={css.icon}
-          src="/img/resource/law.png"
+          src={asset("img/resource/law.png")}
           alt="law"
           draggable={false}
         />

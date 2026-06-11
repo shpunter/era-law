@@ -1,3 +1,4 @@
+import { asset } from "#/shared/asset";
 import { useLawsStore } from "../laws/laws.store";
 import css from "./LawGate.module.css";
 
@@ -13,7 +14,7 @@ const LawGate = ({ goal, row }: LawGateProps) => {
           {spent}/{goalWithBonus}
         </div>
         <div className={css.lock} style={{ top: `${row * 67 + 112}px` }}>
-          <img src="/img/svg/lock.svg" alt="locked" draggable={false} />
+          <img src={asset("img/svg/lock.svg")} alt="locked" draggable={false} />
         </div>
       </>
     )

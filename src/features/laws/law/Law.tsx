@@ -1,4 +1,5 @@
 import Tooltip from "#/components/tooltip/Tooltip";
+import { asset } from "#/shared/asset";
 import type { CastleID } from "#/shared/types";
 import { classnames } from "#/shared/classnames";
 import type { LawType } from "../laws.config";
@@ -72,7 +73,7 @@ const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
         </div>
         <img
           className={css.image}
-          src={`/img/laws/${factionID}/${law.img}`}
+          src={asset(`img/laws/${factionID}/${law.img}`)}
           alt=""
           draggable={false}
         />
