@@ -33,13 +33,30 @@ const recomputeBonusLimit = (
   return limit;
 };
 
+// `spent` is derived, not stored: the total law-point cost of every law enacted
+// up to (and including) the viewed day. Counts the same range as the law levels
+// in Law.tsx, so it tracks historyIDX automatically. Use as a selector:
+//   const spent = useLawsStore(selectSpent);
+export const selectSpent = (state: Store): number => {
+  let spent = 0;
+
+  for (let day = 0; day <= state.historyIDX; day++) {
+    const ids = state.history[day];
+
+    if (!ids) continue;
+
+    for (const id of ids) spent += state.config[id]?.cost ?? 0;
+  }
+
+  return spent;
+};
+
 export const useLawsStore = create<Store & Action>((set) => ({
   config: {},
   history: [],
   resource: [],
   mine: [],
   historyIDX: 0,
-  spent: 0,
   lower: null,
   higher: null,
   bonus: {
@@ -89,7 +106,6 @@ export const useLawsStore = create<Store & Action>((set) => ({
         history,
         resource,
         mine,
-        spent: state.spent + (law?.cost ?? 0),
       };
     });
   },
@@ -109,15 +125,9 @@ export const useLawsStore = create<Store & Action>((set) => ({
     set((state) => {
       if (arg === "curr-day") {
         const { historyIDX, config } = state;
-        const currDay = state.history[historyIDX] ?? [];
 
-        // Give back the law points spent on every law enacted today.
-        const currSpent = currDay.reduce(
-          (sum, id) => sum + (config[id]?.cost ?? 0),
-          0,
-        );
-
-        // Wipe today's entry from each per-day timeline.
+        // Wipe today's entry from each per-day timeline. `spent` is derived, so
+        // it follows automatically.
         const history = structuredClone(state.history);
         const resource = structuredClone(state.resource);
         const mine = structuredClone(state.mine);
@@ -127,7 +137,6 @@ export const useLawsStore = create<Store & Action>((set) => ({
         mine[historyIDX] = [];
 
         return {
-          spent: state.spent - currSpent,
           history,
           resource,
           mine,
@@ -138,7 +147,6 @@ export const useLawsStore = create<Store & Action>((set) => ({
       }
 
       return {
-        spent: 0,
         history: [],
         resource: [],
         mine: [],
@@ -151,7 +159,6 @@ export const useLawsStore = create<Store & Action>((set) => ({
 }));
 
 type Store = {
-  spent: number;
   historyIDX: number;
   resource: { resID: ResourceKey; amount: number }[][];
   mine: { resID: ResourceKey; amount: number }[][];

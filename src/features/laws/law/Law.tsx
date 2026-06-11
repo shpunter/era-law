@@ -3,7 +3,7 @@ import { asset } from "#/shared/asset";
 import type { CastleID } from "#/shared/types";
 import { classnames } from "#/shared/classnames";
 import type { LawType } from "../laws.config";
-import { useLawsStore } from "../laws.store";
+import { selectSpent, useLawsStore } from "../laws.store";
 import css from "./law.module.css";
 import LawTooltip from "./LawTooltip";
 import Price from "./Price/Price";
@@ -12,7 +12,7 @@ const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
   const addLaw = useLawsStore((state) => state.addLaw);
   const setBonus = useLawsStore((state) => state.setBonus);
   const historyIDX = useLawsStore((state) => state.historyIDX);
-  const spent = useLawsStore((state) => state.spent);
+  const spent = useLawsStore(selectSpent);
   const level = useLawsStore((state) => state.lower?.level ?? 0);
   const bonusLimit = useLawsStore((state) => state.bonus.limit);
 

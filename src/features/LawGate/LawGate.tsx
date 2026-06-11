@@ -1,9 +1,9 @@
 import { asset } from "#/shared/asset";
-import { useLawsStore } from "../laws/laws.store";
+import { selectSpent, useLawsStore } from "../laws/laws.store";
 import css from "./LawGate.module.css";
 
 const LawGate = ({ goal, row }: LawGateProps) => {
-  const spent = useLawsStore((state) => state.spent);
+  const spent = useLawsStore(selectSpent);
   const bonusLimit = useLawsStore((state) => state.bonus.limit);
   const goalWithBonus = goal - bonusLimit;
 

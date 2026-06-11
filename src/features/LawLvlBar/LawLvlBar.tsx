@@ -1,4 +1,4 @@
-import { useLawsStore } from "#/features/laws/laws.store";
+import { selectSpent, useLawsStore } from "#/features/laws/laws.store";
 import { asset } from "#/shared/asset";
 import { state$ } from "#/shared/lawBus";
 import { useObservable } from "#/shared/useObservable";
@@ -8,7 +8,7 @@ const LawLvlBar = () => {
   const { resLaw } = useObservable(state$, state$.getValue()).down;
   const lower = useLawsStore((state) => state.lower);
   const higher = useLawsStore((state) => state.higher);
-  const spent = useLawsStore((state) => state.spent);
+  const spent = useLawsStore(selectSpent);
 
   if (!lower || !higher) return null;
 
