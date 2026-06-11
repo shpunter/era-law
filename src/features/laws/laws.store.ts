@@ -3,6 +3,36 @@ import { create } from "zustand";
 import type { LawBound } from "./calc";
 import type { FactionLaws, LawID, LawType } from "./laws.config";
 
+// Recompute the unlock-limit bonus from history up to (and including) `upTo`:
+// a law's level is how many times it appears, and any law granting a
+// `bonus.limit` contributes that value at its level. Mirrors how Law.tsx sets
+// the bonus when a law is enacted, so it stays correct after a reset removes
+// some enactments.
+const recomputeBonusLimit = (
+  history: LawID[][],
+  config: Partial<Record<LawID, LawType>>,
+  upTo: number,
+): number => {
+  const levels = new Map<LawID, number>();
+  let limit = 0;
+
+  for (let day = 0; day <= upTo; day++) {
+    const ids = history[day];
+
+    if (!ids) continue;
+
+    for (const id of ids) levels.set(id, (levels.get(id) ?? 0) + 1);
+  }
+
+  for (const [id, lvl] of levels) {
+    const law = config[id];
+
+    if (law && "bonus" in law) limit = law.bonus.limit({ lvl });
+  }
+
+  return limit;
+};
+
 export const useLawsStore = create<Store & Action>((set) => ({
   config: {},
   history: [],
@@ -74,6 +104,50 @@ export const useLawsStore = create<Store & Action>((set) => ({
       };
     });
   },
+
+  reset: (arg) => {
+    set((state) => {
+      if (arg === "curr-day") {
+        const { historyIDX, config } = state;
+        const currDay = state.history[historyIDX] ?? [];
+
+        // Give back the law points spent on every law enacted today.
+        const currSpent = currDay.reduce(
+          (sum, id) => sum + (config[id]?.cost ?? 0),
+          0,
+        );
+
+        // Wipe today's entry from each per-day timeline.
+        const history = structuredClone(state.history);
+        const resource = structuredClone(state.resource);
+        const mine = structuredClone(state.mine);
+
+        history[historyIDX] = [];
+        resource[historyIDX] = [];
+        mine[historyIDX] = [];
+
+        return {
+          spent: state.spent - currSpent,
+          history,
+          resource,
+          mine,
+          bonus: {
+            limit: recomputeBonusLimit(history, config, historyIDX),
+          },
+        };
+      }
+
+      return {
+        spent: 0,
+        history: [],
+        resource: [],
+        mine: [],
+        bonus: {
+          limit: 0,
+        },
+      };
+    });
+  },
 }));
 
 type Store = {
@@ -96,4 +170,5 @@ type Action = {
   setConfig: (config: FactionLaws) => void;
   addLaw: (lawID: LawID) => void;
   setBonus: (id: "limit", value: number) => void;
+  reset: (arg: "all" | "curr-day") => void;
 };

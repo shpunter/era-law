@@ -5,7 +5,7 @@ import { useObservable } from "#/shared/useObservable";
 import css from "./LawLvlBar.module.css";
 
 const LawLvlBar = () => {
-  const { resLaw } = useObservable(state$, state$.getValue());
+  const { resLaw } = useObservable(state$, state$.getValue()).down;
   const lower = useLawsStore((state) => state.lower);
   const higher = useLawsStore((state) => state.higher);
   const spent = useLawsStore((state) => state.spent);

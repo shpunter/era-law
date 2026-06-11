@@ -3,7 +3,7 @@ import Law from "#/features/laws/law/Law";
 import { findLawBracket } from "#/features/laws/calc";
 import { LAW_LAYOUT, LAWS } from "#/features/laws/laws.config";
 import { useLawsStore } from "#/features/laws/laws.store";
-import { emit, state$ } from "#/shared/lawBus";
+import { emit, events$, state$ } from "#/shared/lawBus";
 import { useObservable } from "#/shared/useObservable";
 import css from "#/features/laws/laws.module.css";
 import LawLvlBar from "./features/LawLvlBar/LawLvlBar";
@@ -17,7 +17,8 @@ export default function App() {
   const setConfig = useLawsStore((state) => state.setConfig);
   const setHistoryIDX = useLawsStore((state) => state.setHistoryIDX);
   const setBracket = useLawsStore((state) => state.setBracket);
-  const { historyIDX, resLaw } = useObservable(state$, state$.getValue());
+  const reset = useLawsStore((state) => state.reset);
+  const { historyIDX, resLaw } = useObservable(state$, state$.getValue()).down;
 
   const laws = LAWS[FACTION];
   const layout = LAW_LAYOUT[FACTION];
@@ -28,7 +29,7 @@ export default function App() {
 
   useEffect(() => {
     const bracket = findLawBracket(resLaw);
-    
+
     setBracket(bracket?.lower ?? null, bracket?.higher ?? null);
   }, [resLaw, setBracket]);
 
@@ -42,6 +43,15 @@ export default function App() {
   // re-render the board, and lives in the exposed `./App` graph so it runs when
   // federated — main.tsx never executes inside the host.
   useEffect(() => initSendBack(), []);
+
+  useEffect(() => {
+    const sub = events$.subscribe((e) => {
+      if (e.type === "law:reset-all") reset("all");
+      if (e.type === "law:reset-curr-day") reset("curr-day");
+    });
+
+    return () => sub.unsubscribe();
+  }, [reset]);
 
   return (
     <div className={css.laws}>

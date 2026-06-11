@@ -1,13 +1,11 @@
 import { useLawsStore } from "#/features/laws/laws.store";
-import { patchState } from "#/shared/lawBus";
+import { patchUp } from "#/shared/lawBus";
 
 // Call once at app startup. Returns the unsubscribe handle (unused for the app
 // lifetime, but handy for tests/HMR).
 export const initSendBack = () => {
   const publish = (s = useLawsStore.getState()) =>
-    patchState({
-      laws: { resource: s.resource, mine: s.mine, history: s.history },
-    });
+    patchUp({ resource: s.resource, mine: s.mine, history: s.history });
 
   // Seed the bus with the current snapshot so a late-mounting host gets it.
   publish();
