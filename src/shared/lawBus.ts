@@ -10,22 +10,6 @@ import { BehaviorSubject, Subject } from "rxjs";
 // Keep this module framework-agnostic (no React/DOM imports) so any remote,
 // regardless of framework, can import and use it.
 
-/** Fire-and-forget events. Extend this union as the contract grows. */
-export type LawEvent =
-  | { type: "law:ready" }
-  | { type: "law:count-changed"; payload: { count: number } }
-  | { type: "law:action"; payload: { name: string; data?: unknown } };
-
-export type LawState = {
-  historyIDX: number;
-  resLaw: number;
-  laws: {
-    resource: { resID: string; amount: number }[][];
-    mine: { resID: string; amount: number }[][];
-    history: string[][];
-  };
-};
-
 const initialState: LawState = {
   historyIDX: 0,
   resLaw: 4300,
@@ -57,3 +41,19 @@ export const emit = (event: LawEvent): void => events$.next(event);
 /** Merge a partial update into the shared state. */
 export const patchState = (patch: Partial<LawState>): void =>
   state$.next({ ...state$.getValue(), ...patch });
+
+/** Fire-and-forget events. Extend this union as the contract grows. */
+export type LawEvent =
+  | { type: "law:ready" }
+  | { type: "law:count-changed"; payload: { count: number } }
+  | { type: "law:action"; payload: { name: string; data?: unknown } };
+
+export type LawState = {
+  historyIDX: number;
+  resLaw: number;
+  laws: {
+    resource: { resID: string; amount: number }[][];
+    mine: { resID: string; amount: number }[][];
+    history: string[][];
+  };
+};

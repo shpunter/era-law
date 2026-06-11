@@ -7,8 +7,9 @@ import { emit, state$ } from "#/shared/lawBus";
 import { useObservable } from "#/shared/useObservable";
 import css from "#/features/laws/laws.module.css";
 import LawLvlBar from "./features/LawLvlBar/LawLvlBar";
-import "./index.css";
 import LawGate from "./features/LawGate/LawGate";
+import { initSendBack } from "./features/SendBack/sendBack";
+import "./index.css";
 
 const FACTION = "hive" as const;
 
@@ -35,6 +36,12 @@ export default function App() {
     setConfig(laws);
     emit({ type: "law:ready" });
   }, [laws, setConfig]);
+
+  // Mirror enacted-law outputs to the host over the bus. Uses a store
+  // subscription (reads via getState, not component state) so updates never
+  // re-render the board, and lives in the exposed `./App` graph so it runs when
+  // federated — main.tsx never executes inside the host.
+  useEffect(() => initSendBack(), []);
 
   return (
     <div className={css.laws}>
