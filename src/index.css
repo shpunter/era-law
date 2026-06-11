@@ -1,0 +1,29 @@
+/* Design tokens copied from the host app (src/styles.css) so the Law feature's
+   CSS modules resolve the same custom properties they relied on there. */
+:root {
+  --black-40: oklch(0.4 0 0);
+  --black-60: oklch(0.6 0 0);
+  --black-90: oklch(0.9 0 0);
+  --yellow-70: oklch(0.7 0.1 108);
+  --text-dim: oklch(0.62 0.01 243);
+  --text-main: oklch(0.96 0.02 260 / 0.7);
+  --dark-blue-30: oklch(0.3 0.04 257);
+  --highlight-25: oklch(1 0 0 / 0.25);
+  --shadow-50: oklch(0 0 0 / 0.5);
+}
+
+/* Mirror the host app's global reset (era/src/styles.css) so the Law feature
+   renders identically whether it runs standalone or federated into the host.
+   Without this, standalone falls back to the browser defaults (content-box and
+   a 16px base font) while federated it inherits the host's border-box + 12px,
+   which shifts the fixed-size tiles and absolutely-positioned overlays. */
+*:not(img) {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  color: var(--text-main);
+}

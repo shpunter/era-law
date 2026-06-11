@@ -1,0 +1,45 @@
+.laws {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  position: relative;
+}
+
+.scroll {
+  position: relative;
+  width: 700px;
+  height: 520px;
+
+  background-image: url("/img/law-scroll.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.side {
+  position: absolute;
+  top: 109px;
+  bottom: 109px;
+  width: 280px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left {
+  left: 42px;
+  align-items: center;
+}
+
+.right {
+  right: 42px;
+  align-items: center;
+}
+
+.group {
+  display: flex;
+  gap: 30px;
+}
