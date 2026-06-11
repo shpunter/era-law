@@ -12,6 +12,7 @@ import { BehaviorSubject, Subject } from "rxjs";
 
 const initialState: LawState = {
   down: {
+    faction: "hive",
     historyIDX: 0,
     resLaw: 14300,
   },
@@ -66,8 +67,17 @@ export type LawEvent =
   | { type: "law:count-changed"; payload: { count: number } }
   | { type: "law:action"; payload: { name: string; data?: unknown } };
 
+export type Faction =
+  | "hive"
+  | "schism"
+  | "temple"
+  | "dungeon"
+  | "grove"
+  | "necropolis";
+
 export type LawState = {
   down: {
+    faction: Faction;
     historyIDX: number;
     resLaw: number;
   };

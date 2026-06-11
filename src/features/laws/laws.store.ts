@@ -1,7 +1,7 @@
 import type { ResourceKey } from "#/shared/types";
 import { create } from "zustand";
 import type { LawBound } from "./calc";
-import type { FactionLaws, LawID, LawType } from "./laws.config";
+import type { LawID, LawType } from "./laws.config";
 
 // Recompute the unlock-limit bonus from history up to (and including) `upTo`:
 // a law's level is how many times it appears, and any law granting a
@@ -174,7 +174,7 @@ type Store = {
 type Action = {
   setHistoryIDX: (historyIDX: number) => void;
   setBracket: (lower: LawBound | null, higher: LawBound | null) => void;
-  setConfig: (config: FactionLaws) => void;
+  setConfig: (config: Partial<Record<LawID, LawType>>) => void;
   addLaw: (lawID: LawID) => void;
   setBonus: (id: "limit", value: number) => void;
   reset: (arg: "all" | "curr-day") => void;

@@ -1,14 +1,13 @@
 import Tooltip from "#/components/tooltip/Tooltip";
 import { asset } from "#/shared/asset";
-import type { CastleID } from "#/shared/types";
 import { classnames } from "#/shared/classnames";
-import type { LawType } from "../laws.config";
+import type { FactionID, LawType } from "../laws.config";
 import { selectSpent, useLawsStore } from "../laws.store";
 import css from "./law.module.css";
 import LawTooltip from "./LawTooltip";
 import Price from "./Price/Price";
 
-const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
+const Law = ({ law, factionID }: { law: LawType; factionID: FactionID }) => {
   const addLaw = useLawsStore((state) => state.addLaw);
   const setBonus = useLawsStore((state) => state.setBonus);
   const historyIDX = useLawsStore((state) => state.historyIDX);
@@ -43,7 +42,8 @@ const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
   const onClick = () => {
     if (isMax || isDisabled || isUnaffordable) return;
 
-    if (law.id === "l010") {
+    // if (law.id === "l010") {
+    if ("bonus" in law) {
       setBonus("limit", law.bonus.limit({ lvl: lawLvl + 1 }));
     }
 
