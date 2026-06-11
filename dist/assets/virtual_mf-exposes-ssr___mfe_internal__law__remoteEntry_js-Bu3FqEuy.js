@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/App-VZWQ3ceB.js","assets/App-xC2MiZTJ.js","assets/App-DQaMr79C.css"])))=>i.map(i=>d[i]);
-import{t as e}from"./vite-preload-helper-y5xVM8Io.js";var t={"./App":async()=>{let t=await e(()=>import(`./App-VZWQ3ceB.js`),__vite__mapDeps([0,1,2])),n={};return Object.assign(n,t),Object.defineProperty(n,"__esModule",{value:!0,enumerable:!1}),n}};export{t as default};
