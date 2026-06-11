@@ -12,9 +12,9 @@ const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
   const historyIDX = useLawsStore((state) => state.historyIDX);
   const spent = useLawsStore((state) => state.spent);
   const level = useLawsStore((state) => state.lower?.level ?? 0);
+
   const isUnaffordable = law.cost > level - spent;
   const isDisabled = law.limit > spent;
-
 
   const lawLvl = useLawsStore((state) => {
     let count = 0;
@@ -69,7 +69,13 @@ const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
           alt=""
           draggable={false}
         />
-        {lawLvl < law.max && <Price law={law} unaffordable={isUnaffordable} disabled={isDisabled}/>}
+        {lawLvl < law.max && (
+          <Price
+            law={law}
+            unaffordable={isUnaffordable}
+            disabled={isDisabled}
+          />
+        )}
       </Tooltip.Trigger>
       <Tooltip.Content className={css.tooltip}>
         <LawTooltip law={law} lawLvl={lawLvl} />

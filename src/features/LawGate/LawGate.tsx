@@ -1,7 +1,7 @@
 import { useLawsStore } from "../laws/laws.store";
-import css from "./Lock.module.css";
+import css from "./LawGate.module.css";
 
-const Lock = ({ goal, row }: LockProps) => {
+const LawGate = ({ goal, row }: LawGateProps) => {
   const spent = useLawsStore((state) => state.spent);
 
   return (
@@ -13,9 +13,9 @@ const Lock = ({ goal, row }: LockProps) => {
   );
 };
 
-export default Lock;
+export default LawGate;
 
-type LockProps = {
+type LawGateProps = {
   goal: number;
   row: number;
 };

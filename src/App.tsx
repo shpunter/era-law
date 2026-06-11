@@ -8,7 +8,7 @@ import { useObservable } from "#/shared/useObservable";
 import css from "#/features/laws/laws.module.css";
 import LawLvlBar from "./features/LawLvlBar/LawLvlBar";
 import "./index.css";
-import Lock from "./features/Lock/Lock";
+import LawGate from "./features/LawGate/LawGate";
 
 const FACTION = "hive" as const;
 
@@ -61,7 +61,7 @@ export default function App() {
       </div>
       <LawLvlBar />
       {[0, 5, 15, 30, 50].map((el, i) => {
-        return <Lock key={el} goal={el} row={i} />;
+        return <LawGate key={el} goal={el} row={i} />;
       })}
     </div>
   );

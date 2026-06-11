@@ -1,13 +1,3 @@
-// A law is identified by its `id` (e.g. "l000"), which is also its key in LAWS.
-export type LawID = keyof FactionLaws;
-// A single law's config.
-export type LawType = FactionLaws[LawID];
-// The flat law map for a single faction, keyed by law id.
-export type FactionLaws = (typeof LAWS)[keyof typeof LAWS];
-
-// Law configs, flattened per faction and keyed by id. The on-screen grouping
-// lives separately in LAW_LAYOUT so the data and its layout can vary
-// independently.
 export const LAWS = {
   hive: {
     l000: {
@@ -386,3 +376,7 @@ export const LAW_LAYOUT: Record<
 
 type LVL = { lvl: number };
 type Sight = { sight: number };
+
+export type LawID = keyof FactionLaws;
+export type LawType = FactionLaws[LawID];
+export type FactionLaws = (typeof LAWS)[keyof typeof LAWS];

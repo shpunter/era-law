@@ -21,14 +21,6 @@ export const useLawsStore = create<Store & Action>((set) => ({
     set((state) => ({ ...state, config }));
   },
 
-  // increaseSpent: () => {
-  //   set((state) => {
-  //     return {
-  //       spent: state.spent + 1,
-  //     };
-  //   });
-  // },
-
   addLaw: (lawID) => {
     set((state) => {
       const { historyIDX } = state;
@@ -77,8 +69,6 @@ type Store = {
   mine: { resID: ResourceKey; amount: number }[][];
   config: Partial<Record<LawID, LawType>>;
   history: LawID[][];
-  // Current law bracket for resLaw: the level reached (`lower`) and the next
-  // one (`higher`). Null until first computed from resLaw.
   lower: LawBound | null;
   higher: LawBound | null;
 };
@@ -88,5 +78,4 @@ type Action = {
   setBracket: (lower: LawBound | null, higher: LawBound | null) => void;
   setConfig: (config: FactionLaws) => void;
   addLaw: (lawID: LawID) => void;
-  // increaseSpent: () => void;
 };
