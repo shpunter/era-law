@@ -3,12 +3,19 @@ import css from "./LawGate.module.css";
 
 const LawGate = ({ goal, row }: LawGateProps) => {
   const spent = useLawsStore((state) => state.spent);
+  const bonusLimit = useLawsStore((state) => state.bonus.limit);
+  const goalWithBonus = goal - bonusLimit;
 
   return (
-    spent < goal && (
-      <div className={css.progress} style={{ top: `${row * 67 + 140}px` }}>
-        {spent}/{goal}
-      </div>
+    spent < goalWithBonus && (
+      <>
+        <div className={css.progress} style={{ top: `${row * 67 + 140}px` }}>
+          {spent}/{goalWithBonus}
+        </div>
+        <div className={css.lock} style={{ top: `${row * 67 + 112}px` }}>
+          <img src="/img/svg/lock.svg" alt="locked" draggable={false} />
+        </div>
+      </>
     )
   );
 };

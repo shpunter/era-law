@@ -25,10 +25,9 @@ export default function App() {
     setHistoryIDX(historyIDX ?? 0);
   }, [historyIDX, setHistoryIDX]);
 
-  // Derive the law bracket from resLaw and mirror it into the store so any
-  // component can read the current/next level without recomputing.
   useEffect(() => {
     const bracket = findLawBracket(resLaw);
+    
     setBracket(bracket?.lower ?? null, bracket?.higher ?? null);
   }, [resLaw, setBracket]);
 

@@ -9,12 +9,14 @@ import Price from "./Price/Price";
 
 const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
   const addLaw = useLawsStore((state) => state.addLaw);
+  const setBonus = useLawsStore((state) => state.setBonus);
   const historyIDX = useLawsStore((state) => state.historyIDX);
   const spent = useLawsStore((state) => state.spent);
   const level = useLawsStore((state) => state.lower?.level ?? 0);
+  const bonusLimit = useLawsStore((state) => state.bonus.limit);
 
   const isUnaffordable = law.cost > level - spent;
-  const isDisabled = law.limit > spent;
+  const isDisabled = law.limit - bonusLimit > spent;
 
   const lawLvl = useLawsStore((state) => {
     let count = 0;
@@ -39,6 +41,11 @@ const Law = ({ law, factionID }: { law: LawType; factionID: CastleID }) => {
 
   const onClick = () => {
     if (isMax || isDisabled || isUnaffordable) return;
+
+    if (law.id === "l010") {
+      setBonus("limit", law.bonus.limit({ lvl: lawLvl + 1 }));
+    }
+
     addLaw(law.id);
   };
 

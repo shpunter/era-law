@@ -10,7 +10,7 @@ export const LAWS = {
         gold: 2500,
         wood: 5,
         ore: 5,
-      }, 
+      },
       limit: 0,
       title: "Resource Riches I",
       description: () =>
@@ -23,6 +23,9 @@ export const LAWS = {
       img: "010.webp",
       incomeType: "none",
       limit: 0,
+      bonus: {
+        limit: ({ lvl }: LVL) => Math.min(4, lvl * 2),
+      },
       title: "Laws of the Hive",
       description: ({ lvl }: LVL) =>
         `Requirements for unlocking higher-level Laws are reduced by ${Math.min(4, lvl * 2)}.`,
@@ -369,7 +372,7 @@ export const LAW_LAYOUT: Record<
       ["l101", "l111", "l121"],
       ["l201", "l211", "l221", "l231"],
       ["l301", "l311"],
-      ["l401", "l411", "l421"]
+      ["l401", "l411", "l421"],
     ],
   },
 };

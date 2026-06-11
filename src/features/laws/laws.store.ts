@@ -12,6 +12,9 @@ export const useLawsStore = create<Store & Action>((set) => ({
   spent: 0,
   lower: null,
   higher: null,
+  bonus: {
+    limit: 0,
+  },
 
   setHistoryIDX: (historyIDX) => set({ historyIDX }),
 
@@ -56,7 +59,18 @@ export const useLawsStore = create<Store & Action>((set) => ({
         history,
         resource,
         mine,
-        spent: state.spent + (law?.cost ?? 0)
+        spent: state.spent + (law?.cost ?? 0),
+      };
+    });
+  },
+
+  setBonus: (id, value) => {
+    set((state) => {
+      return {
+        bonus: {
+          ...state.bonus,
+          [id]: value,
+        },
       };
     });
   },
@@ -71,6 +85,9 @@ type Store = {
   history: LawID[][];
   lower: LawBound | null;
   higher: LawBound | null;
+  bonus: {
+    limit: number;
+  };
 };
 
 type Action = {
@@ -78,4 +95,5 @@ type Action = {
   setBracket: (lower: LawBound | null, higher: LawBound | null) => void;
   setConfig: (config: FactionLaws) => void;
   addLaw: (lawID: LawID) => void;
+  setBonus: (id: "limit", value: number) => void;
 };
