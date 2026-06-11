@@ -595,7 +595,7 @@ export const LAWS = {
       incomeType: "daily",
       income: {
         wood: 1,
-        ore: 2,
+        ore: 1,
       },
       limit: 30,
       title: "Survival Conditions",
@@ -760,6 +760,47 @@ export const LAWS = {
       description: () => `All enemy creatures lose 1 Speed and Initiative.`,
     },
   },
+  dungeon: {
+    l000: {
+      id: "l000",
+      cost: 1,
+      max: 1,
+      img: "l000.webp",
+      incomeType: "once",
+      income: {
+        gold: 2500,
+        wood: 5,
+        ore: 5,
+      },
+      limit: 0,
+      title: "Resource Riches I",
+      description: () =>
+        "Provides a one-time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted.",
+    },
+    l010: {
+      id: "l010",
+      cost: 6,
+      max: 1,
+      img: "l010.webp",
+      incomeType: "daily",
+      income: {
+        astrology: 500,
+      },
+      limit: 0,
+      title: "Arcane Knowledge",
+      description: () => `Produces 500 Astrology points daily.`,
+    },
+    l020: {
+      id: "l020",
+      cost: 2,
+      max: 2,
+      img: "l020.webp",
+      incomeType: "vip",
+      limit: 0,
+      title: "Leaders of the Nation",
+      description: ({ lvl }: LVL) => `Your heroes generate ${Math.min(20, lvl * 10)}% Law points.`,
+    },
+  },
 } as const;
 // { lvl }: LVL
 // ${Math.min(20, lvl * 10)}
@@ -803,6 +844,10 @@ export const LAW_LAYOUT: {
       ["l301", "l311", "l321", "l331"],
       ["l401", "l411", "l421"],
     ],
+  },
+  dungeon: {
+    left: [["l000", "l010", "l020"]],
+    right: [],
   },
 };
 
