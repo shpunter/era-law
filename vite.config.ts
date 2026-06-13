@@ -12,12 +12,18 @@ import { federation } from '@module-federation/vite'
 export default defineConfig(({ mode }) => {
   const isDev = mode === 'development'
 
+  // Public origin the remote is served from in production. The host loads
+  // remoteEntry.js and every chunk/asset relative to this, so it must be the
+  // deployed URL. Defaults to the Cloudflare domain; override with PUBLIC_URL
+  // (e.g. PUBLIC_URL=http://localhost:8085/ for a local `preview` smoke test).
+  const publicUrl = process.env.PUBLIC_URL || 'https://law.eraplanner.com/'
+
   return {
     server: { port: 8085, cors: true },
     preview: { port: 8085, cors: true },
     // Absolute base lets the host load the remote's assets cross-origin; in dev
     // a relative base keeps the standalone server self-contained.
-    base: isDev ? '/' : 'http://localhost:8085/',
+    base: isDev ? '/' : publicUrl,
     // `#/x` resolves to `src/x`, matching the host app's import alias so copied
     // feature files keep their original import paths.
     resolve: {

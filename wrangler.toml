@@ -1,0 +1,6 @@
+name = "law-eraplanner"
+compatibility_date = "2026-06-13"
+
+# Cloudflare Pages serves the Vite build output. The build command
+# (`npm run build`) is set in the Pages project's dashboard settings.
+pages_build_output_dir = "dist"
