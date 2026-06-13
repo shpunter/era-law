@@ -1,4 +1,4 @@
-name = "law-eraplanner"
+name = "era-law"
 compatibility_date = "2026-06-13"
 
 # This is an assets-only Worker (no server code): Cloudflare serves the Vite

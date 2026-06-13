@@ -6,7 +6,7 @@ loads `remoteEntry.js` from here at runtime.
 
 ## One-time setup (Cloudflare dashboard)
 
-1. **Workers & Pages → the `law-eraplanner` Worker → Settings → Build.**
+1. **Workers & Pages → the `era-law` Worker → Settings → Build.**
 2. Build settings:
    - **Build command:** `pnpm build`
    - **Deploy command:** `npx wrangler deploy` (default — uses `wrangler.toml`)
