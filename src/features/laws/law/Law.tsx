@@ -43,7 +43,7 @@ const Law = ({ law, factionID }: { law: LawType; factionID: FactionID }) => {
     if (isMax || isDisabled || isUnaffordable) return;
 
     // if (law.id === "l010") {
-    if ("bonus" in law) {
+    if ("bonus" in law && "limit" in law.bonus) {
       setBonus("limit", law.bonus.limit({ lvl: lawLvl + 1 }));
     }
 

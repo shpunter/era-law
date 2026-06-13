@@ -16,7 +16,7 @@ const initialState: LawState = {
     historyIDX: 0,
     resLaw: 14300,
   },
-  up: { resource: [], mine: [], history: [] },
+  up: { resource: [], mine: [], history: [], bonus: { law: 0 } },
 };
 
 // Pin the streams on globalThis so host and remote share one instance even
@@ -85,5 +85,6 @@ export type LawState = {
     resource: { resID: string; amount: number }[][];
     mine: { resID: string; amount: number }[][];
     history: string[][];
+    bonus: { law: number };
   };
 };

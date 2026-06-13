@@ -5,7 +5,14 @@ import { patchUp } from "#/shared/lawBus";
 // lifetime, but handy for tests/HMR).
 export const initSendBack = () => {
   const publish = (s = useLawsStore.getState()) =>
-    patchUp({ resource: s.resource, mine: s.mine, history: s.history });
+    patchUp({
+      resource: s.resource,
+      mine: s.mine,
+      history: s.history,
+      bonus: {
+        law: s.bonus.law,
+      },
+    });
 
   // Seed the bus with the current snapshot so a late-mounting host gets it.
   publish();

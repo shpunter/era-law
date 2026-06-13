@@ -27,7 +27,9 @@ const recomputeBonusLimit = (
   for (const [id, lvl] of levels) {
     const law = config[id];
 
-    if (law && "bonus" in law) limit = law.bonus.limit({ lvl });
+    if (law && "bonus" in law && "limit" in law.bonus) {
+      limit = law.bonus.limit({ lvl });
+    }
   }
 
   return limit;
@@ -61,6 +63,7 @@ export const useLawsStore = create<Store & Action>((set) => ({
   higher: null,
   bonus: {
     limit: 0,
+    law: 0,
   },
 
   setHistoryIDX: (historyIDX) => set({ historyIDX }),
@@ -142,6 +145,7 @@ export const useLawsStore = create<Store & Action>((set) => ({
           mine,
           bonus: {
             limit: recomputeBonusLimit(history, config, historyIDX),
+            law: 0,
           },
         };
       }
@@ -152,6 +156,7 @@ export const useLawsStore = create<Store & Action>((set) => ({
         mine: [],
         bonus: {
           limit: 0,
+          law: 0,
         },
       };
     });
@@ -168,6 +173,7 @@ type Store = {
   higher: LawBound | null;
   bonus: {
     limit: number;
+    law: number;
   };
 };
 

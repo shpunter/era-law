@@ -795,8 +795,12 @@ export const LAWS = {
       cost: 2,
       max: 2,
       img: "l020.webp",
-      incomeType: "vip",
+      incomeType: "none",
       limit: 0,
+      // Multiplies the host's daily law income: +10% at lvl1, +20% at lvl2.
+      bonus: {
+        income: ({ lvl }: LVL) => Math.min(20, lvl * 10),
+      },
       title: "Leaders of the Nation",
       description: ({ lvl }: LVL) => `Your heroes generate ${Math.min(20, lvl * 10)}% Law points.`,
     },
