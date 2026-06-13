@@ -1,4 +1,4 @@
-# Cloudflare Pages headers. This site is a Module Federation remote: the host
+# Cloudflare static-asset headers. This site is a Module Federation remote: the host
 # (eraplanner.com) loads remoteEntry.js and the JS/asset chunks from here
 # cross-origin, so every file must allow CORS.
 /*

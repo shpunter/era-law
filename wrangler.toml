@@ -1,6 +1,9 @@
 name = "law-eraplanner"
 compatibility_date = "2026-06-13"
 
-# Cloudflare Pages serves the Vite build output. The build command
-# (`npm run build`) is set in the Pages project's dashboard settings.
-pages_build_output_dir = "dist"
+# This is an assets-only Worker (no server code): Cloudflare serves the Vite
+# build output as static files. The build command (`pnpm build`) is set in the
+# Worker's dashboard build settings and produces `dist`. CORS / cache rules in
+# `dist/_headers` are applied automatically by Workers Static Assets.
+[assets]
+directory = "./dist"
