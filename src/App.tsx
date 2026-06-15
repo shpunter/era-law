@@ -9,7 +9,7 @@ import { useObservable } from "#/shared/useObservable";
 import css from "#/features/laws/laws.module.css";
 import LawLvlBar from "./features/LawLvlBar/LawLvlBar";
 import LawGate from "./features/LawGate/LawGate";
-import { initSendBack } from "./features/SendBack/sendBack";
+import { initSendBack } from "./shared/sendBack";
 import "./index.css";
 
 export default function App() {
