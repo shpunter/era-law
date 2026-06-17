@@ -12,9 +12,9 @@ import { BehaviorSubject, Subject } from "rxjs";
 
 const initialState: LawState = {
   down: {
-    faction: "hive",
+    faction: "grove",
     historyIDX: 0,
-    resLaw: 14300,
+    resLaw: 143_000,
   },
   up: { resource: [], mine: [], history: [], bonus: { law: 0 } },
 };

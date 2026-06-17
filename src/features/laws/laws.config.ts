@@ -783,10 +783,10 @@ export const LAWS = {
       max: 1,
       img: "l010.webp",
       incomeType: "daily",
+      limit: 0,
       income: {
         astrology: 500,
       },
-      limit: 0,
       title: "Arcane Knowledge",
       description: () => `Produces 500 Astrology points daily.`,
     },
@@ -797,14 +797,380 @@ export const LAWS = {
       img: "l020.webp",
       incomeType: "none",
       limit: 0,
-      // Multiplies the host's daily law income: +10% at lvl1, +20% at lvl2.
       bonus: {
-        income: ({ lvl }: LVL) => Math.min(20, lvl * 10),
+        law: 10,
       },
       title: "Leaders of the Nation",
-      description: ({ lvl }: LVL) => `Your heroes generate ${Math.min(20, lvl * 10)}% Law points.`,
+      description: ({ lvl }: LVL) =>
+        `Your heroes generate ${Math.min(20, lvl * 10)}% Law points.`,
+    },
+    l001: {
+      id: "l001",
+      cost: 3,
+      max: 2,
+      img: "l001.webp",
+      incomeType: "none",
+      limit: 0,
+      title: "Elite Troglodytes",
+      description: ({ lvl }: LVL) =>
+        `Your Troglodytes deal 1.5 times more Damage when using their Fighting Style. Their min. Damage increases by ${Math.min(2, lvl)}.`,
+    },
+    l011: {
+      id: "l011",
+      cost: 3,
+      max: 1,
+      img: "l011.webp",
+      incomeType: "none",
+      limit: 0,
+      title: "Dungeon Masters I",
+      description: () =>
+        `Tier-1 creature growth in your cities increases by 4.`,
+    },
+    l021: {
+      id: "l021",
+      cost: 2,
+      max: 3,
+      img: "l021.webp",
+      incomeType: "none",
+      limit: 0,
+      title: "Dragon Scales",
+      description: ({ lvl }: LVL) =>
+        `Friendly creatures take –${Math.min(15, lvl * 5)}% Magic Damage.`,
+    },
+    l100: {
+      id: "l100",
+      cost: 2,
+      max: 2,
+      img: "l100.webp",
+      incomeType: "daily",
+      income: {
+        gold: 250,
+      },
+      limit: 5,
+      title: "Tax Collectors",
+      description: ({ lvl }: LVL) =>
+        `Produces ${Math.min(500, lvl * 250)} Gold daily.`,
+    },
+    l110: {
+      id: "l110",
+      cost: 2,
+      max: 2,
+      img: "l110.webp",
+      incomeType: "daily",
+      income: {
+        gems: 1,
+      },
+      limit: 5,
+      title: "Mining: Gems",
+      description: ({ lvl }: LVL) =>
+        `Produces ${Math.min(2, lvl)} Gem(s) daily.`,
+    },
+    l120: {
+      id: "l120",
+      cost: 4,
+      max: 1,
+      img: "l120.webp",
+      incomeType: "once",
+      income: {
+        dust: 75,
+      },
+      limit: 5,
+      title: "Alchemists Code I",
+      description: () =>
+        `Provides a one-time allotment of 75 Alchemical Dust when enacted.`,
+    },
+    l101: {
+      id: "l101",
+      cost: 3,
+      max: 2,
+      img: "l101.webp",
+      incomeType: "none",
+      limit: 5,
+      title: "Elite Infiltrators",
+      description: ({ lvl }: LVL) =>
+        `Your Infiltrators deal 1.5 times more Damage when using their Fighting Style. They gain ${Math.min(4, lvl * 2)} HP.`,
+    },
+    l111: {
+      id: "l111",
+      cost: 3,
+      max: 2,
+      img: "l111.webp",
+      incomeType: "none",
+      limit: 5,
+      title: "Elite Dancers",
+      description: ({ lvl }: LVL) =>
+        `Your Onyx Dancers deal 1.5 times more Damage when using their Fighting Style. They gain ${Math.min(4, lvl * 2)} Attack and Defense.`,
+    },
+    l121: {
+      id: "l121",
+      cost: 3,
+      max: 1,
+      img: "l121.webp",
+      incomeType: "none",
+      limit: 5,
+      title: "Dungeon Masters II",
+      description: () =>
+        `Tier-2 creature growth in your cities increases by 4.`,
+    },
+    l131: {
+      id: "l131",
+      img: "l131.webp",
+      cost: 3,
+      max: 1,
+      incomeType: "none",
+      limit: 5,
+      title: "Dungeon Masters III",
+      description: () =>
+        `Tier-3 creature growth in your cities increases by 2.`,
+    },
+    l200: {
+      id: "l200",
+      img: "l200.webp",
+      cost: 2,
+      max: 1,
+      incomeType: "once",
+      income: {
+        gold: 5000,
+        wood: 10,
+        ore: 10,
+      },
+      limit: 15,
+      title: "Resource Riches II",
+      description: () =>
+        `Provides a one-time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted.`,
+    },
+    l210: {
+      id: "l210",
+      img: "l210.webp",
+      cost: 3,
+      max: 2,
+      incomeType: "none",
+      limit: 15,
+      title: "Or No Ore?",
+      description: ({ lvl }: LVL) =>
+        `Your buildings cost –${Math.min(40, lvl * 20)}% Ore to construct.`,
+    },
+    l220: {
+      id: "l220",
+      img: "l220.webp",
+      cost: 5,
+      max: 2,
+      incomeType: "none",
+      limit: 15,
+      title: "Jadame Maps",
+      description: ({ lvl }: LVL) =>
+        `Your heroes gain ${Math.min(20, lvl * 10)} Movement points.`,
+    },
+    l230: {
+      id: "l230",
+      img: "l230.webp",
+      cost: 2,
+      max: 3,
+      incomeType: "none",
+      limit: 15,
+      title: "Spy Network",
+      description: ({ lvl }: LVL) =>
+        `All external buildings and structures under your control gain +${Math.min(6, lvl * 2)} sight radius.`,
+    },
+    l201: {
+      id: "l201",
+      img: "l201.webp",
+      cost: 3,
+      max: 2,
+      incomeType: "none",
+      limit: 15,
+      title: "Elite Minotaurs",
+      description: ({ lvl }: LVL) =>
+        `Your Minotaurs deal 1.5 times more Damage when using their Fighting Style. They gain 1 Speed and Initiative and deal +${Math.min(4, lvl * 2)} Damage.`,
+    },
+    l211: {
+      id: "l211",
+      img: "l211.webp",
+      cost: 3,
+      max: 2,
+      incomeType: "none",
+      limit: 15,
+      title: "Elite Medusae",
+      description: ({ lvl }: LVL) =>
+        `Your Medusae deal 1.5 times more Damage when using their Fighting Style. They gain ${Math.min(2, lvl)} Initiative and 4 Attack and Defense.`,
+    },
+    l221: {
+      id: "l221",
+      img: "l221.webp",
+      cost: 5,
+      max: 1,
+      incomeType: "none",
+      limit: 15,
+      title: "Tactical Advantage",
+      description: () => `All enemy creatures lose 1 Initiative.`,
+    },
+    l231: {
+      id: "l231",
+      img: "l231.webp",
+      cost: 3,
+      max: 1,
+      incomeType: "none",
+      limit: 15,
+      title: "Dungeon Masters IV",
+      description: () =>
+        `Tier-4 creature growth in your cities increases by 2.`,
+    },
+    l300: {
+      id: "l300",
+      img: "l300.webp",
+      cost: 6,
+      max: 1,
+      incomeType: "none",
+      limit: 30,
+      title: "Merchants Guild",
+      description: () => `Eliminates all price markups in the Marketplace.`,
+    },
+    l310: {
+      id: "l310",
+      img: "l310.webp",
+      cost: 4,
+      max: 2,
+      incomeType: "none",
+      limit: 30,
+      title: "Triumvirate's Agents",
+      description: ({ lvl }: LVL) =>
+        `Your Dungeon heroes gain ${Math.min(2, lvl)} to all attributes.`,
+    },
+    l320: {
+      id: "l320",
+      img: "l320.webp",
+      cost: 4,
+      max: 1,
+      incomeType: "once",
+      income: {
+        dust: 150,
+      },
+      limit: 30,
+      title: "Alchemists Code II",
+      description: () =>
+        `Provides a one-time allotment of 150 Alchemical Dust when enacted.`,
+    },
+    l330: {
+      id: "l330",
+      img: "l330.webp",
+      cost: 3,
+      max: 2,
+      incomeType: "none",
+      limit: 30,
+      title: "Peoples of Jadame",
+      description: ({ lvl }: LVL) =>
+        `Your heroes’ Persuasion Power in Diplomacy increases by ${Math.min(20, lvl * 10)}%.`,
+    },
+    l301: {
+      id: "l301",
+      img: "l301.webp",
+      cost: 3,
+      max: 2,
+      incomeType: "none",
+      limit: 30,
+      title: "Elite Hydras",
+      description: ({ lvl }: LVL) =>
+        `Your Hydras deal 1.5 times more Damage when using their Fighting Style. They gain ${Math.min(2, lvl)} Speed and 25 HP.`,
+    },
+    l311: {
+      id: "l311",
+      img: "l311.webp",
+      cost: 3,
+      max: 1,
+      incomeType: "none",
+      limit: 30,
+      title: "Dungeon Masters V",
+      description: () =>
+        `Tier-5 creature growth in your cities increases by 1.`,
+    },
+    l321: {
+      id: "l321",
+      img: "l321.webp",
+      cost: 3,
+      max: 1,
+      incomeType: "none",
+      limit: 30,
+      title: "Dungeon Masters VI",
+      description: () =>
+        `Tier-6 creature growth in your cities increases by 1.`,
+    },
+    l400: {
+      id: "l400",
+      img: "l400.webp",
+      cost: 3,
+      max: 1,
+      incomeType: "once",
+      income: {
+        gold: 7500,
+        wood: 15,
+        ore: 15,
+      },
+      limit: 50,
+      title: "Resource Riches III",
+      description: () =>
+        `Provides a one-time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted.`,
+    },
+    l410: {
+      id: "l410",
+      img: "l410.webp",
+      cost: 5,
+      max: 1,
+      incomeType: "none",
+      limit: 50,
+      title: "Magical Education",
+      description: () => `Spells of your heroes gain 1 level(s).`,
+    },
+    l420: {
+      id: "l420",
+      img: "l420.webp",
+      cost: 4,
+      max: 1,
+      incomeType: "none",
+      limit: 50,
+      title: "Saturation",
+      description: () => `Your Focus Charge limit increases by 1.`,
+    },
+    l401: {
+      id: "l401",
+      img: "l401.webp",
+      cost: 3,
+      max: 2,
+      incomeType: "none",
+      limit: 50,
+      title: "Elite Cave Dragons",
+      description: ({ lvl }: LVL) =>
+        `Your Cave Dragons deal 1.5 times more Damage, when using their Fighting Style. They gain ${Math.min(8, lvl * 4)} Attack and Defense and ${Math.min(2, lvl)} Speed and Initiative.`,
+    },
+    l411: {
+      id: "l411",
+      img: "l411.webp",
+      cost: 3,
+      max: 1,
+      incomeType: "none",
+      limit: 50,
+      title: "Dungeon Masters VII",
+      description: () =>
+        `Tier-7 creature growth in your cities increases by 1.`,
     },
   },
+  grove: {
+    l000: {
+      id: "l000",
+      cost: 1,
+      max: 1,
+      img: "l000.webp",
+      incomeType: "once",
+      income: {
+        gold: 2500,
+        wood: 5,
+        ore: 5,
+      },
+      limit: 0,
+      title: "Resource Riches I",
+      description: () =>
+        "Provides a one-time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted.",
+    },
+  }
 } as const;
 // { lvl }: LVL
 // ${Math.min(20, lvl * 10)}
@@ -850,9 +1216,25 @@ export const LAW_LAYOUT: {
     ],
   },
   dungeon: {
-    left: [["l000", "l010", "l020"]],
-    right: [],
+    left: [
+      ["l000", "l010", "l020"],
+      ["l100", "l110", "l120"],
+      ["l200", "l210", "l220", "l230"],
+      ["l300", "l310", "l320", "l330"],
+      ["l400", "l410", "l420"],
+    ],
+    right: [
+      ["l001", "l011", "l021"],
+      ["l101", "l111", "l121", "l131"],
+      ["l201", "l211", "l221", "l231"],
+      ["l301", "l311", "l321"],
+      ["l401", "l411"],
+    ],
   },
+  grove: {
+    left: [],
+    right: [],
+  }
 };
 
 type LVL = { lvl: number };
