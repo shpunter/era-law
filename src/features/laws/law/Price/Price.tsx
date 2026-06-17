@@ -1,9 +1,8 @@
 import { asset } from "#/shared/asset";
 import { classnames } from "#/shared/classnames";
-import type { LawType } from "../../laws.config";
 import css from "./Price.module.css";
 
-const Price = ({ law, unaffordable, disabled }: PriceProps) => {
+const Price = ({ cost, unaffordable, disabled }: PriceProps) => {
   const classNames = classnames({
     [css.value]: true,
     [css.unaffordable]: !disabled && unaffordable,
@@ -17,7 +16,7 @@ const Price = ({ law, unaffordable, disabled }: PriceProps) => {
         alt="law"
         draggable={false}
       />
-      <span className={classNames}>{law.cost}</span>
+      <span className={classNames}>{cost}</span>
     </div>
   );
 };
@@ -25,7 +24,7 @@ const Price = ({ law, unaffordable, disabled }: PriceProps) => {
 export default Price;
 
 type PriceProps = {
-  law: LawType;
+  cost: number;
   unaffordable: boolean;
   disabled: boolean;
 };

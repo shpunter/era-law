@@ -41,13 +41,19 @@ const recomputeBonusLimit = (
 //   const spent = useLawsStore(selectSpent);
 export const selectSpent = (state: Store): number => {
   let spent = 0;
+  // Per-law enactment count so each level draws its own entry from `cost[]`.
+  const levels = new Map<LawID, number>();
 
   for (let day = 0; day <= state.historyIDX; day++) {
     const ids = state.history[day];
 
     if (!ids) continue;
 
-    for (const id of ids) spent += state.config[id]?.cost ?? 0;
+    for (const id of ids) {
+      const lvl = levels.get(id) ?? 0;
+      spent += state.config[id]?.cost[lvl] ?? 0;
+      levels.set(id, lvl + 1);
+    }
   }
 
   return spent;

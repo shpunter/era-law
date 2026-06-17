@@ -2,7 +2,7 @@ export const LAWS = {
   hive: {
     l000: {
       id: "l000",
-      cost: 1,
+      cost: [1],
       max: 1,
       img: "l000.webp",
       incomeType: "once",
@@ -18,7 +18,7 @@ export const LAWS = {
     },
     l010: {
       id: "l010",
-      cost: 1,
+      cost: [1, 1],
       max: 2,
       img: "l010.webp",
       incomeType: "none",
@@ -32,7 +32,7 @@ export const LAWS = {
     },
     l020: {
       id: "l020",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l020.webp",
       incomeType: "none",
@@ -43,7 +43,7 @@ export const LAWS = {
     },
     l030: {
       id: "l030",
-      cost: 4,
+      cost: [4],
       max: 1,
       img: "l030.webp",
       incomeType: "none",
@@ -53,7 +53,7 @@ export const LAWS = {
     },
     l100: {
       id: "l100",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l100.webp",
       incomeType: "daily",
@@ -67,7 +67,7 @@ export const LAWS = {
     },
     l110: {
       id: "l110",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       img: "l110.webp",
       incomeType: "daily",
@@ -81,7 +81,7 @@ export const LAWS = {
     },
     l120: {
       id: "l120",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l120.webp",
       incomeType: "none",
@@ -92,7 +92,7 @@ export const LAWS = {
     },
     l200: {
       id: "l200",
-      cost: 2,
+      cost: [2],
       max: 1,
       img: "l200.webp",
       incomeType: "once",
@@ -108,7 +108,7 @@ export const LAWS = {
     },
     l210: {
       id: "l210",
-      cost: 4,
+      cost: [4],
       max: 1,
       img: "l210.webp",
       incomeType: "none",
@@ -119,7 +119,7 @@ export const LAWS = {
     },
     l220: {
       id: "l220",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l220.webp",
       incomeType: "none",
@@ -129,7 +129,7 @@ export const LAWS = {
     },
     l300: {
       id: "l300",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       img: "l300.webp",
       incomeType: "none",
@@ -140,7 +140,7 @@ export const LAWS = {
     },
     l310: {
       id: "l310",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l310.webp",
       incomeType: "none",
@@ -151,7 +151,7 @@ export const LAWS = {
     },
     l400: {
       id: "l400",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       img: "l400.webp",
       incomeType: "none",
@@ -162,7 +162,7 @@ export const LAWS = {
     },
     l410: {
       id: "l410",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l410.webp",
       incomeType: "once",
@@ -178,7 +178,7 @@ export const LAWS = {
     },
     l420: {
       id: "l420",
-      cost: 3,
+      cost: [3, 3, 3],
       max: 3,
       img: "l420.webp",
       incomeType: "none",
@@ -189,7 +189,7 @@ export const LAWS = {
     },
     l001: {
       id: "l001",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l001.webp",
       incomeType: "none",
@@ -200,7 +200,7 @@ export const LAWS = {
     },
     l011: {
       id: "l011",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l011.webp",
       incomeType: "none",
@@ -211,7 +211,7 @@ export const LAWS = {
     },
     l021: {
       id: "l021",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l021.webp",
       incomeType: "none",
@@ -221,7 +221,7 @@ export const LAWS = {
     },
     l101: {
       id: "l101",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l101.webp",
       incomeType: "none",
@@ -232,7 +232,7 @@ export const LAWS = {
     },
     l111: {
       id: "l111",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l111.webp",
       incomeType: "none",
@@ -243,7 +243,7 @@ export const LAWS = {
     },
     l121: {
       id: "l121",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l121.webp",
       incomeType: "none",
@@ -254,7 +254,7 @@ export const LAWS = {
     },
     l201: {
       id: "l201",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l201.webp",
       incomeType: "none",
@@ -265,7 +265,7 @@ export const LAWS = {
     },
     l211: {
       id: "l211",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l211.webp",
       incomeType: "none",
@@ -276,7 +276,7 @@ export const LAWS = {
     },
     l221: {
       id: "l221",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l221.webp",
       incomeType: "none",
@@ -287,7 +287,7 @@ export const LAWS = {
     },
     l231: {
       id: "l231",
-      cost: 4,
+      cost: [4],
       max: 1,
       img: "l231.webp",
       incomeType: "none",
@@ -297,7 +297,7 @@ export const LAWS = {
     },
     l301: {
       id: "l301",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l301.webp",
       incomeType: "none",
@@ -308,7 +308,7 @@ export const LAWS = {
     },
     l311: {
       id: "l311",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l311.webp",
       incomeType: "none",
@@ -319,7 +319,7 @@ export const LAWS = {
     },
     l401: {
       id: "l401",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       img: "l401.webp",
       incomeType: "none",
@@ -330,7 +330,7 @@ export const LAWS = {
     },
     l411: {
       id: "l411",
-      cost: 3,
+      cost: [3, 3, 3],
       max: 3,
       img: "l411.webp",
       incomeType: "none",
@@ -341,7 +341,7 @@ export const LAWS = {
     },
     l421: {
       id: "l421",
-      cost: 5,
+      cost: [5],
       max: 1,
       img: "l421.webp",
       incomeType: "none",
@@ -354,7 +354,7 @@ export const LAWS = {
   schism: {
     l000: {
       id: "l000",
-      cost: 1,
+      cost: [1],
       max: 1,
       img: "l000.webp",
       incomeType: "once",
@@ -370,7 +370,7 @@ export const LAWS = {
     },
     l010: {
       id: "l010",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l010.webp",
       incomeType: "once",
@@ -381,7 +381,7 @@ export const LAWS = {
     },
     l020: {
       id: "l020",
-      cost: 1,
+      cost: [1, 1],
       max: 2,
       img: "l020.webp",
       incomeType: "once",
@@ -392,7 +392,7 @@ export const LAWS = {
     },
     l001: {
       id: "l001",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l001.webp",
       incomeType: "once",
@@ -404,7 +404,7 @@ export const LAWS = {
     l011: {
       id: "l011",
       img: "l011.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "once",
       limit: 0,
@@ -415,7 +415,7 @@ export const LAWS = {
     l021: {
       id: "l021",
       img: "l021.webp",
-      cost: 3,
+      cost: [3, 3, 3],
       max: 3,
       incomeType: "once",
       limit: 0,
@@ -426,7 +426,7 @@ export const LAWS = {
     l100: {
       id: "l100",
       img: "l100.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "daily",
       income: {
@@ -439,7 +439,7 @@ export const LAWS = {
     },
     l110: {
       id: "l110",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       img: "l110.webp",
       incomeType: "daily",
@@ -453,7 +453,7 @@ export const LAWS = {
     },
     l120: {
       id: "l120",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       img: "l120.webp",
       incomeType: "none",
@@ -464,7 +464,7 @@ export const LAWS = {
     },
     l130: {
       id: "l130",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l130.webp",
       incomeType: "none",
@@ -476,7 +476,7 @@ export const LAWS = {
     l101: {
       id: "l101",
       img: "l101.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -487,7 +487,7 @@ export const LAWS = {
     l111: {
       id: "l111",
       img: "l111.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -498,7 +498,7 @@ export const LAWS = {
     l121: {
       id: "l121",
       img: "l121.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -509,7 +509,7 @@ export const LAWS = {
     l131: {
       id: "l131",
       img: "l131.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -520,7 +520,7 @@ export const LAWS = {
     l200: {
       id: "l200",
       img: "l200.webp",
-      cost: 2,
+      cost: [2],
       max: 1,
       incomeType: "once",
       income: {
@@ -536,7 +536,7 @@ export const LAWS = {
     l210: {
       id: "l210",
       img: "l210.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -546,7 +546,7 @@ export const LAWS = {
     l220: {
       id: "l220",
       img: "l220.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -557,7 +557,7 @@ export const LAWS = {
     l201: {
       id: "l201",
       img: "l201.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -568,7 +568,7 @@ export const LAWS = {
     l211: {
       id: "l211",
       img: "l211.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -579,7 +579,7 @@ export const LAWS = {
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -590,7 +590,7 @@ export const LAWS = {
     l300: {
       id: "l300",
       img: "l300.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "daily",
       income: {
@@ -605,7 +605,7 @@ export const LAWS = {
     l310: {
       id: "l310",
       img: "l310.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -616,7 +616,7 @@ export const LAWS = {
     l320: {
       id: "l320",
       img: "l320.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -627,7 +627,7 @@ export const LAWS = {
     l330: {
       id: "l330",
       img: "l330.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -638,7 +638,7 @@ export const LAWS = {
     l301: {
       id: "l301",
       img: "l301.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -649,7 +649,7 @@ export const LAWS = {
     l311: {
       id: "l311",
       img: "l311.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -660,7 +660,7 @@ export const LAWS = {
     l321: {
       id: "l321",
       img: "l321.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -671,7 +671,7 @@ export const LAWS = {
     l331: {
       id: "l331",
       img: "l331.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -682,7 +682,7 @@ export const LAWS = {
     l400: {
       id: "l400",
       img: "l400.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "once",
       income: {
@@ -698,7 +698,7 @@ export const LAWS = {
     l410: {
       id: "l410",
       img: "l410.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -709,7 +709,7 @@ export const LAWS = {
     l420: {
       id: "l420",
       img: "l420.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -720,7 +720,7 @@ export const LAWS = {
     l430: {
       id: "l430",
       img: "l430.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -730,7 +730,7 @@ export const LAWS = {
     l401: {
       id: "l401",
       img: "l401.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 50,
@@ -741,7 +741,7 @@ export const LAWS = {
     l411: {
       id: "l411",
       img: "l411.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 50,
@@ -752,7 +752,7 @@ export const LAWS = {
     l421: {
       id: "l421",
       img: "l421.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -763,7 +763,7 @@ export const LAWS = {
   dungeon: {
     l000: {
       id: "l000",
-      cost: 1,
+      cost: [1],
       max: 1,
       img: "l000.webp",
       incomeType: "once",
@@ -779,7 +779,7 @@ export const LAWS = {
     },
     l010: {
       id: "l010",
-      cost: 6,
+      cost: [6],
       max: 1,
       img: "l010.webp",
       incomeType: "daily",
@@ -792,7 +792,7 @@ export const LAWS = {
     },
     l020: {
       id: "l020",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       img: "l020.webp",
       incomeType: "none",
@@ -806,7 +806,7 @@ export const LAWS = {
     },
     l001: {
       id: "l001",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l001.webp",
       incomeType: "none",
@@ -817,7 +817,7 @@ export const LAWS = {
     },
     l011: {
       id: "l011",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l011.webp",
       incomeType: "none",
@@ -828,7 +828,7 @@ export const LAWS = {
     },
     l021: {
       id: "l021",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       img: "l021.webp",
       incomeType: "none",
@@ -839,7 +839,7 @@ export const LAWS = {
     },
     l100: {
       id: "l100",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       img: "l100.webp",
       incomeType: "daily",
@@ -853,7 +853,7 @@ export const LAWS = {
     },
     l110: {
       id: "l110",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       img: "l110.webp",
       incomeType: "daily",
@@ -867,7 +867,7 @@ export const LAWS = {
     },
     l120: {
       id: "l120",
-      cost: 4,
+      cost: [4],
       max: 1,
       img: "l120.webp",
       incomeType: "once",
@@ -881,7 +881,7 @@ export const LAWS = {
     },
     l101: {
       id: "l101",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l101.webp",
       incomeType: "none",
@@ -892,7 +892,7 @@ export const LAWS = {
     },
     l111: {
       id: "l111",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       img: "l111.webp",
       incomeType: "none",
@@ -903,7 +903,7 @@ export const LAWS = {
     },
     l121: {
       id: "l121",
-      cost: 3,
+      cost: [3],
       max: 1,
       img: "l121.webp",
       incomeType: "none",
@@ -915,7 +915,7 @@ export const LAWS = {
     l131: {
       id: "l131",
       img: "l131.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -926,7 +926,7 @@ export const LAWS = {
     l200: {
       id: "l200",
       img: "l200.webp",
-      cost: 2,
+      cost: [2],
       max: 1,
       incomeType: "once",
       income: {
@@ -942,7 +942,7 @@ export const LAWS = {
     l210: {
       id: "l210",
       img: "l210.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -953,7 +953,7 @@ export const LAWS = {
     l220: {
       id: "l220",
       img: "l220.webp",
-      cost: 5,
+      cost: [5, 5],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -964,7 +964,7 @@ export const LAWS = {
     l230: {
       id: "l230",
       img: "l230.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 15,
@@ -975,7 +975,7 @@ export const LAWS = {
     l201: {
       id: "l201",
       img: "l201.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -986,7 +986,7 @@ export const LAWS = {
     l211: {
       id: "l211",
       img: "l211.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -997,7 +997,7 @@ export const LAWS = {
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1007,7 +1007,7 @@ export const LAWS = {
     l231: {
       id: "l231",
       img: "l231.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1018,7 +1018,7 @@ export const LAWS = {
     l300: {
       id: "l300",
       img: "l300.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1028,7 +1028,7 @@ export const LAWS = {
     l310: {
       id: "l310",
       img: "l310.webp",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1039,7 +1039,7 @@ export const LAWS = {
     l320: {
       id: "l320",
       img: "l320.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "once",
       income: {
@@ -1053,7 +1053,7 @@ export const LAWS = {
     l330: {
       id: "l330",
       img: "l330.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1064,7 +1064,7 @@ export const LAWS = {
     l301: {
       id: "l301",
       img: "l301.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1075,7 +1075,7 @@ export const LAWS = {
     l311: {
       id: "l311",
       img: "l311.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1086,7 +1086,7 @@ export const LAWS = {
     l321: {
       id: "l321",
       img: "l321.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1097,7 +1097,7 @@ export const LAWS = {
     l400: {
       id: "l400",
       img: "l400.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "once",
       income: {
@@ -1113,7 +1113,7 @@ export const LAWS = {
     l410: {
       id: "l410",
       img: "l410.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1123,7 +1123,7 @@ export const LAWS = {
     l420: {
       id: "l420",
       img: "l420.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1133,7 +1133,7 @@ export const LAWS = {
     l401: {
       id: "l401",
       img: "l401.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 50,
@@ -1144,7 +1144,7 @@ export const LAWS = {
     l411: {
       id: "l411",
       img: "l411.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1157,7 +1157,7 @@ export const LAWS = {
     l000: {
       id: "l000",
       img: "l000.webp",
-      cost: 1,
+      cost: [1],
       max: 1,
       incomeType: "once",
       income: {
@@ -1173,7 +1173,7 @@ export const LAWS = {
     l010: {
       id: "l010",
       img: "l010.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "daily",
       income: {
@@ -1186,7 +1186,7 @@ export const LAWS = {
     l020: {
       id: "l020",
       img: "l020.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 0,
@@ -1197,7 +1197,7 @@ export const LAWS = {
     l001: {
       id: "l001",
       img: "l001.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 0,
@@ -1208,7 +1208,7 @@ export const LAWS = {
     l011: {
       id: "l011",
       img: "l011.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 0,
@@ -1219,7 +1219,7 @@ export const LAWS = {
     l100: {
       id: "l100",
       img: "l100.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "daily",
       income: {
@@ -1233,7 +1233,7 @@ export const LAWS = {
     l110: {
       id: "l110",
       img: "l110.webp",
-      cost: 1,
+      cost: [1],
       max: 1,
       incomeType: "daily",
       income: {
@@ -1246,7 +1246,7 @@ export const LAWS = {
     l120: {
       id: "l120",
       img: "l120.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -1256,7 +1256,7 @@ export const LAWS = {
     l101: {
       id: "l101",
       img: "l101.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 5,
@@ -1267,7 +1267,7 @@ export const LAWS = {
     l111: {
       id: "l111",
       img: "l111.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -1278,7 +1278,7 @@ export const LAWS = {
     l121: {
       id: "l121",
       img: "l121.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 5,
@@ -1289,7 +1289,7 @@ export const LAWS = {
     l200: {
       id: "l200",
       img: "l200.webp",
-      cost: 2,
+      cost: [2],
       max: 1,
       incomeType: "once",
       income: {
@@ -1305,7 +1305,7 @@ export const LAWS = {
     l210: {
       id: "l210",
       img: "l210.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -1316,7 +1316,7 @@ export const LAWS = {
     l220: {
       id: "l220",
       img: "l220.webp",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -1327,7 +1327,7 @@ export const LAWS = {
     l230: {
       id: "l230",
       img: "l230.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1338,7 +1338,7 @@ export const LAWS = {
     l201: {
       id: "l201",
       img: "l201.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 15,
@@ -1349,7 +1349,7 @@ export const LAWS = {
     l211: {
       id: "l211",
       img: "l211.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1360,7 +1360,7 @@ export const LAWS = {
     l300: {
       id: "l300",
       img: "l300.webp",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1371,7 +1371,7 @@ export const LAWS = {
     l310: {
       id: "l310",
       img: "l310.webp",
-      cost: 4,
+      cost: [4, 4, 4],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -1382,7 +1382,7 @@ export const LAWS = {
     l320: {
       id: "l320",
       img: "l320.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1393,7 +1393,7 @@ export const LAWS = {
     l330: {
       id: "l330",
       img: "l330.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1403,7 +1403,7 @@ export const LAWS = {
     l301: {
       id: "l301",
       img: "l301.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -1414,7 +1414,7 @@ export const LAWS = {
     l311: {
       id: "l311",
       img: "l311.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -1425,7 +1425,7 @@ export const LAWS = {
     l321: {
       id: "l321",
       img: "l321.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -1436,7 +1436,7 @@ export const LAWS = {
     l400: {
       id: "l400",
       img: "l400.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "once",
       income: {
@@ -1452,7 +1452,7 @@ export const LAWS = {
     l410: {
       id: "l410",
       img: "l410.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1462,7 +1462,7 @@ export const LAWS = {
     l420: {
       id: "l420",
       img: "l420.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 50,
@@ -1473,7 +1473,7 @@ export const LAWS = {
     l430: {
       id: "l430",
       img: "l430.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1484,7 +1484,7 @@ export const LAWS = {
     l401: {
       id: "l401",
       img: "l401.webp",
-      cost: 3,
+      cost: [3, 2, 1],
       max: 3,
       incomeType: "none",
       limit: 50,
@@ -1495,7 +1495,7 @@ export const LAWS = {
     l411: {
       id: "l411",
       img: "l411.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1506,7 +1506,7 @@ export const LAWS = {
     l421: {
       id: "l421",
       img: "l421.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1519,7 +1519,7 @@ export const LAWS = {
     l000: {
       id: "l000",
       img: "l000.webp",
-      cost: 1,
+      cost: [1],
       max: 1,
       incomeType: "once",
       income: {
@@ -1535,7 +1535,7 @@ export const LAWS = {
     l010: {
       id: "l010",
       img: "l010.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "daily",
       income: {
@@ -1549,7 +1549,7 @@ export const LAWS = {
     l020: {
       id: "l020",
       img: "l020.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 0,
@@ -1559,7 +1559,7 @@ export const LAWS = {
     l030: {
       id: "l030",
       img: "l030.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 0,
@@ -1570,7 +1570,7 @@ export const LAWS = {
     l001: {
       id: "l001",
       img: "l001.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 0,
@@ -1581,7 +1581,7 @@ export const LAWS = {
     l011: {
       id: "l011",
       img: "l011.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 0,
@@ -1592,7 +1592,7 @@ export const LAWS = {
     l021: {
       id: "l021",
       img: "l021.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 0,
@@ -1603,7 +1603,7 @@ export const LAWS = {
     l100: {
       id: "l100",
       img: "l100.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "daily",
       income: {
@@ -1617,7 +1617,7 @@ export const LAWS = {
     l110: {
       id: "l110",
       img: "l110.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 5,
@@ -1628,7 +1628,7 @@ export const LAWS = {
     l120: {
       id: "l120",
       img: "l120.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -1638,7 +1638,7 @@ export const LAWS = {
     l130: {
       id: "l130",
       img: "l130.webp",
-      cost: 2,
+      cost: [2, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 5,
@@ -1649,7 +1649,7 @@ export const LAWS = {
     l101: {
       id: "l101",
       img: "l101.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -1660,7 +1660,7 @@ export const LAWS = {
     l111: {
       id: "l111",
       img: "l111.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -1671,7 +1671,7 @@ export const LAWS = {
     l121: {
       id: "l121",
       img: "l121.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -1682,7 +1682,7 @@ export const LAWS = {
     l200: {
       id: "l200",
       img: "l200.webp",
-      cost: 2,
+      cost: [2],
       max: 1,
       incomeType: "once",
       income: {
@@ -1698,7 +1698,7 @@ export const LAWS = {
     l210: {
       id: "l210",
       img: "l210.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1708,7 +1708,7 @@ export const LAWS = {
     l220: {
       id: "l220",
       img: "l220.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1718,7 +1718,7 @@ export const LAWS = {
     l230: {
       id: "l230",
       img: "l230.webp",
-      cost: 2,
+      cost: [2, 1, 1],
       max: 3,
       incomeType: "none",
       limit: 15,
@@ -1729,7 +1729,7 @@ export const LAWS = {
     l201: {
       id: "l201",
       img: "l201.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -1740,7 +1740,7 @@ export const LAWS = {
     l211: {
       id: "l211",
       img: "l211.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -1751,7 +1751,7 @@ export const LAWS = {
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -1762,7 +1762,7 @@ export const LAWS = {
     l300: {
       id: "l300",
       img: "l300.webp",
-      cost: 3,
+      cost: [3, 2, 2],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -1773,7 +1773,7 @@ export const LAWS = {
     l310: {
       id: "l310",
       img: "l310.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1784,7 +1784,7 @@ export const LAWS = {
     l320: {
       id: "l320",
       img: "l320.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 30,
@@ -1794,7 +1794,7 @@ export const LAWS = {
     l301: {
       id: "l301",
       img: "l301.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1805,7 +1805,7 @@ export const LAWS = {
     l311: {
       id: "l311",
       img: "l311.webp",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1816,7 +1816,7 @@ export const LAWS = {
     l321: {
       id: "l321",
       img: "l321.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1827,7 +1827,7 @@ export const LAWS = {
     l400: {
       id: "l400",
       img: "l400.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "once",
       income: {
@@ -1843,7 +1843,7 @@ export const LAWS = {
     l410: {
       id: "l410",
       img: "l410.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1854,7 +1854,7 @@ export const LAWS = {
     l420: {
       id: "l420",
       img: "l420.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1864,7 +1864,7 @@ export const LAWS = {
     l401: {
       id: "l401",
       img: "l401.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1875,7 +1875,7 @@ export const LAWS = {
     l411: {
       id: "l411",
       img: "l411.webp",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 50,
@@ -1888,7 +1888,7 @@ export const LAWS = {
     l000: {
       id: "l000",
       img: "l000.webp",
-      cost: 1,
+      cost: [1],
       max: 1,
       incomeType: "once",
       income: {
@@ -1904,7 +1904,7 @@ export const LAWS = {
     l010: {
       id: "l010",
       img: "l010.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 0,
@@ -1915,7 +1915,7 @@ export const LAWS = {
     l020: {
       id: "l020",
       img: "l020.webp",
-      cost: 2,
+      cost: [2],
       max: 1,
       incomeType: "daily",
       income: {
@@ -1928,7 +1928,7 @@ export const LAWS = {
     l001: {
       id: "l001",
       img: "l001.webp",
-      cost: 2,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 0,
@@ -1939,7 +1939,7 @@ export const LAWS = {
     l011: {
       id: "l011",
       img: "l011.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 0,
@@ -1950,7 +1950,7 @@ export const LAWS = {
     l021: {
       id: "l021",
       img: "l021.webp",
-      cost: 1,
+      cost: [1],
       max: 1,
       incomeType: "none",
       limit: 0,
@@ -1961,7 +1961,7 @@ export const LAWS = {
     l100: {
       id: "l100",
       img: "l100.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "daily",
       income: {
@@ -1975,7 +1975,7 @@ export const LAWS = {
     l110: {
       id: "l110",
       img: "l110.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "daily",
       income: {
@@ -1989,7 +1989,7 @@ export const LAWS = {
     l120: {
       id: "l120",
       img: "l120.webp",
-      cost: 2,
+      cost: [2, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -2000,7 +2000,7 @@ export const LAWS = {
     l101: {
       id: "l101",
       img: "l101.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -2011,18 +2011,18 @@ export const LAWS = {
     l111: {
       id: "l111",
       img: "l111.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 5,
-      title: "Elite Lightweaver",
+      title: "Elite Lightweavers",
       description: ({ lvl }: LVL) =>
         `Lightweaver growth in your cities increases by 2. They deal +${Math.min(4, lvl * 2)} Damage.`,
     },
     l121: {
       id: "l121",
       img: "l121.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 5,
@@ -2033,7 +2033,7 @@ export const LAWS = {
     l131: {
       id: "l131",
       img: "l131.webp",
-      cost: 5,
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -2043,7 +2043,7 @@ export const LAWS = {
     l200: {
       id: "l200",
       img: "l200.webp",
-      cost: 2,
+      cost: [2],
       max: 1,
       incomeType: "once",
       income: {
@@ -2059,7 +2059,7 @@ export const LAWS = {
     l210: {
       id: "l210",
       img: "l210.webp",
-      cost: 4,
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -2070,7 +2070,7 @@ export const LAWS = {
     l220: {
       id: "l220",
       img: "l220.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -2080,7 +2080,7 @@ export const LAWS = {
     l230: {
       id: "l230",
       img: "l230.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -2090,7 +2090,7 @@ export const LAWS = {
     l201: {
       id: "l201",
       img: "l201.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -2101,7 +2101,7 @@ export const LAWS = {
     l211: {
       id: "l211",
       img: "l211.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -2112,7 +2112,7 @@ export const LAWS = {
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -2123,7 +2123,7 @@ export const LAWS = {
     l300: {
       id: "l300",
       img: "l300.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -2134,7 +2134,7 @@ export const LAWS = {
     l310: {
       id: "l310",
       img: "l310.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -2145,7 +2145,7 @@ export const LAWS = {
     l320: {
       id: "l320",
       img: "l320.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -2156,7 +2156,7 @@ export const LAWS = {
     l330: {
       id: "l330",
       img: "l330.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -2167,7 +2167,7 @@ export const LAWS = {
     l301: {
       id: "l301",
       img: "l301.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -2178,7 +2178,7 @@ export const LAWS = {
     l311: {
       id: "l311",
       img: "l311.webp",
-      cost: 1,
+      cost: [1, 1, 1],
       max: 3,
       incomeType: "none",
       limit: 30,
@@ -2189,7 +2189,7 @@ export const LAWS = {
     l321: {
       id: "l321",
       img: "l321.webp",
-      cost: 3,
+      cost: [3, 3],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -2200,7 +2200,7 @@ export const LAWS = {
     l400: {
       id: "l400",
       img: "l400.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "once",
       income: {
@@ -2216,7 +2216,7 @@ export const LAWS = {
     l410: {
       id: "l410",
       img: "l410.webp",
-      cost: 4,
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -2227,7 +2227,7 @@ export const LAWS = {
     l401: {
       id: "l401",
       img: "l401.webp",
-      cost: 3,
+      cost: [3, 2],
       max: 2,
       incomeType: "none",
       limit: 50,
@@ -2238,7 +2238,7 @@ export const LAWS = {
     l411: {
       id: "l411",
       img: "l411.webp",
-      cost: 6,
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -2249,7 +2249,7 @@ export const LAWS = {
     l421: {
       id: "l421",
       img: "l421.webp",
-      cost: 3,
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 50,

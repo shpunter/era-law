@@ -15,7 +15,6 @@ const Law = ({ law, factionID }: { law: LawType; factionID: FactionID }) => {
   const level = useLawsStore((state) => state.lower?.level ?? 0);
   const bonusLimit = useLawsStore((state) => state.bonus.limit);
 
-  const isUnaffordable = law.cost > level - spent;
   const isDisabled = law.limit - bonusLimit > spent;
 
   const lawLvl = useLawsStore((state) => {
@@ -31,6 +30,10 @@ const Law = ({ law, factionID }: { law: LawType; factionID: FactionID }) => {
 
     return count;
   });
+
+  // Cost of the next level to enact.
+  const cost = law.cost[lawLvl] ?? 0;
+  const isUnaffordable = cost > level - spent;
 
   const isMax = lawLvl >= law.max;
 
@@ -79,7 +82,7 @@ const Law = ({ law, factionID }: { law: LawType; factionID: FactionID }) => {
         />
         {lawLvl < law.max && (
           <Price
-            law={law}
+            cost={cost}
             unaffordable={isUnaffordable}
             disabled={isDisabled}
           />
