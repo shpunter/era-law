@@ -2194,7 +2194,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 30,
       title: " Vengeful Strike",
-      description: ({ lvl }: LVL) =>
+      description: () =>
         `Friendly creatures’ counterattacks deal +50%/100% Damage.`,
     },
     l400: {
