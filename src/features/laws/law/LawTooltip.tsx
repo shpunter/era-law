@@ -17,7 +17,8 @@ const LawTooltip = ({ law, lawLvl }: LawTooltipProps) => {
 
       {isUpgrade && (
         <div className={css.currentLVL}>
-          <p>Level: {lawLvl}</p><br/>
+          <p>Level: {lawLvl}</p>
+          <br />
           <p>{describe(law, lawLvl)}</p>
           <p className={css.nextLabel}>After improvement</p>
         </div>

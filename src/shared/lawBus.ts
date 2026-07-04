@@ -16,7 +16,13 @@ const initialState: LawState = {
     historyIDX: 0,
     resLaw: 143_000,
   },
-  up: { resource: [], mine: [], history: [], bonus: { law: 0 }, hydrated: false },
+  up: {
+    resource: [],
+    mine: [],
+    history: [],
+    bonus: { law: 0 },
+    hydrated: false,
+  },
 };
 
 // Pin the streams on globalThis so host and remote share one instance even

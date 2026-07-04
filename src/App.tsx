@@ -17,14 +17,16 @@ export default function App() {
   const setHistoryIDX = useLawsStore((state) => state.setHistoryIDX);
   const setBracket = useLawsStore((state) => state.setBracket);
   const reset = useLawsStore((state) => state.reset);
-  const { historyIDX, resLaw, faction: factionRaw } = useObservable(
-    state$,
-    state$.getValue(),
-  ).down;
+  const {
+    historyIDX,
+    resLaw,
+    faction: factionRaw,
+  } = useObservable(state$, state$.getValue()).down;
 
   // The host publishes the faction; narrow it to one this remote has a law
   // config for, falling back to hive until those configs land.
-  const faction: FactionID = factionRaw in LAWS ? (factionRaw as FactionID) : "hive";
+  const faction: FactionID =
+    factionRaw in LAWS ? (factionRaw as FactionID) : "hive";
 
   const laws: Partial<Record<LawID, LawType>> = LAWS[faction];
   const layout: { left: LawID[][]; right: LawID[][] } = LAW_LAYOUT[faction];
@@ -67,11 +69,7 @@ export default function App() {
             <div key={group.join()} className={css.group}>
               {group.map((lawID) => {
                 const law = laws[lawID];
-                return (
-                  law && (
-                    <Law key={lawID} law={law} factionID={faction} />
-                  )
-                );
+                return law && <Law key={lawID} law={law} factionID={faction} />;
               })}
             </div>
           ))}
@@ -81,11 +79,7 @@ export default function App() {
             <div key={group.join()} className={css.group}>
               {group.map((lawID) => {
                 const law = laws[lawID];
-                return (
-                  law && (
-                    <Law key={lawID} law={law} factionID={faction} />
-                  )
-                );
+                return law && <Law key={lawID} law={law} factionID={faction} />;
               })}
             </div>
           ))}
