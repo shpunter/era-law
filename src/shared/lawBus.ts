@@ -16,7 +16,13 @@ const initialState: LawState = {
     historyIDX: 0,
     resLaw: 143_000,
   },
-  up: { resource: [], mine: [], history: [], bonus: { law: 0 } },
+  up: {
+    resource: [],
+    mine: [],
+    history: [],
+    bonus: { law: 0 },
+    hydrated: false,
+  },
 };
 
 // Pin the streams on globalThis so host and remote share one instance even
@@ -86,5 +92,8 @@ export type LawState = {
     mine: { resID: string; amount: number }[][];
     history: string[][];
     bonus: { law: number };
+    // False until the remote finishes reading its persisted state from IDB, so
+    // the host can show a loading state instead of an empty/stale board.
+    hydrated: boolean;
   };
 };
