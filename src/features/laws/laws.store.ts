@@ -1,7 +1,31 @@
+import { createIdbStore } from "#/shared/createIdbStore";
+import { patchUp } from "#/shared/lawBus";
 import type { ResourceKey } from "#/shared/types";
-import { create } from "zustand";
 import type { LawBound } from "./calc";
 import type { LawID, LawType } from "./laws.config";
+
+type Store = {
+  historyIDX: number;
+  resource: { resID: ResourceKey; amount: number }[][];
+  mine: { resID: ResourceKey; amount: number }[][];
+  config: Partial<Record<LawID, LawType>>;
+  history: LawID[][];
+  lower: LawBound | null;
+  higher: LawBound | null;
+  bonus: {
+    limit: number;
+    law: number;
+  };
+};
+
+type Action = {
+  setHistoryIDX: (historyIDX: number) => void;
+  setBracket: (lower: LawBound | null, higher: LawBound | null) => void;
+  setConfig: (config: Partial<Record<LawID, LawType>>) => void;
+  addLaw: (lawID: LawID) => void;
+  setBonus: (id: "limit", value: number) => void;
+  reset: (arg: "all" | "curr-day") => void;
+};
 
 // Recompute the unlock-limit bonus from history up to (and including) `upTo`:
 // a law's level is how many times it appears, and any law granting a
@@ -59,135 +83,154 @@ export const selectSpent = (state: Store): number => {
   return spent;
 };
 
-export const useLawsStore = create<Store & Action>((set) => ({
-  config: {},
-  history: [],
-  resource: [],
-  mine: [],
-  historyIDX: 0,
-  lower: null,
-  higher: null,
-  bonus: {
-    limit: 0,
-    law: 0,
-  },
+export const useLawsStore = createIdbStore<Store & Action>(
+  "laws",
+  (set) => ({
+    config: {},
+    history: [],
+    resource: [],
+    mine: [],
+    historyIDX: 0,
+    lower: null,
+    higher: null,
+    bonus: {
+      limit: 0,
+      law: 0,
+    },
 
-  setHistoryIDX: (historyIDX) => set({ historyIDX }),
+    setHistoryIDX: (historyIDX) => set({ historyIDX }),
 
-  setBracket: (lower, higher) => set({ lower, higher }),
+    setBracket: (lower, higher) => set({ lower, higher }),
 
-  setConfig: (config) => {
-    set((state) => ({ ...state, config }));
-  },
+    setConfig: (config) => {
+      set((state) => ({ ...state, config }));
+    },
 
-  addLaw: (lawID) => {
-    set((state) => {
-      const { historyIDX } = state;
-      const history = structuredClone(state.history);
-
-      history[historyIDX] ??= [];
-      history[historyIDX].push(lawID);
-
-      const law = state.config[lawID];
-
-      const resource = structuredClone(state.resource);
-      const mine = structuredClone(state.mine);
-
-      if (law && "income" in law && law.income) {
-        const entries = Object.entries(law.income).map(([resID, amount]) => ({
-          resID: resID as ResourceKey,
-          amount,
-        }));
-
-        if (law.incomeType === "once") {
-          resource[historyIDX] ??= [];
-          resource[historyIDX].push(...entries);
-        }
-
-        if (law.incomeType === "daily") {
-          mine[historyIDX] ??= [];
-          mine[historyIDX].push(...entries);
-        }
-      }
-
-      return {
-        ...state,
-        history,
-        resource,
-        mine,
-      };
-    });
-  },
-
-  setBonus: (id, value) => {
-    set((state) => {
-      return {
-        bonus: {
-          ...state.bonus,
-          [id]: value,
-        },
-      };
-    });
-  },
-
-  reset: (arg) => {
-    set((state) => {
-      if (arg === "curr-day") {
-        const { historyIDX, config } = state;
-
-        // Wipe today's entry from each per-day timeline. `spent` is derived, so
-        // it follows automatically.
+    addLaw: (lawID) => {
+      set((state) => {
+        const { historyIDX } = state;
         const history = structuredClone(state.history);
+
+        history[historyIDX] ??= [];
+        history[historyIDX].push(lawID);
+
+        const law = state.config[lawID];
+
         const resource = structuredClone(state.resource);
         const mine = structuredClone(state.mine);
 
-        history[historyIDX] = [];
-        resource[historyIDX] = [];
-        mine[historyIDX] = [];
+        if (law && "income" in law && law.income) {
+          const entries = Object.entries(law.income).map(([resID, amount]) => ({
+            resID: resID as ResourceKey,
+            amount,
+          }));
+
+          if (law.incomeType === "once") {
+            resource[historyIDX] ??= [];
+            resource[historyIDX].push(...entries);
+          }
+
+          if (law.incomeType === "daily") {
+            mine[historyIDX] ??= [];
+            mine[historyIDX].push(...entries);
+          }
+        }
 
         return {
+          ...state,
           history,
           resource,
           mine,
+        };
+      });
+    },
+
+    setBonus: (id, value) => {
+      set((state) => {
+        return {
           bonus: {
-            limit: recomputeBonusLimit(history, config, historyIDX),
+            ...state.bonus,
+            [id]: value,
+          },
+        };
+      });
+    },
+
+    reset: (arg) => {
+      set((state) => {
+        if (arg === "curr-day") {
+          const { historyIDX, config } = state;
+
+          // Wipe today's entry from each per-day timeline. `spent` is derived, so
+          // it follows automatically.
+          const history = structuredClone(state.history);
+          const resource = structuredClone(state.resource);
+          const mine = structuredClone(state.mine);
+
+          history[historyIDX] = [];
+          resource[historyIDX] = [];
+          mine[historyIDX] = [];
+
+          return {
+            history,
+            resource,
+            mine,
+            bonus: {
+              limit: recomputeBonusLimit(history, config, historyIDX),
+              law: 0,
+            },
+          };
+        }
+
+        return {
+          history: [],
+          resource: [],
+          mine: [],
+          bonus: {
+            limit: 0,
             law: 0,
           },
         };
-      }
-
-      return {
-        history: [],
-        resource: [],
-        mine: [],
-        bonus: {
-          limit: 0,
-          law: 0,
-        },
-      };
-    });
+      });
+    },
+  }),
+  {
+    // config contains LawType objects with function properties — structured
+    // clone (used by IDB) cannot serialize functions, so exclude it.
+    // lower/higher are derived from host-pushed state and reset on mount.
+    // bonus IS persisted: it can't be recomputed on hydration because that needs
+    // config, which the host pushes after mount (setConfig), so it would be 0.
+    partialize: (state) => ({
+      history: state.history,
+      resource: state.resource,
+      mine: state.mine,
+      historyIDX: state.historyIDX,
+      bonus: state.bonus,
+    }),
   },
-}));
+);
 
-type Store = {
-  historyIDX: number;
-  resource: { resID: ResourceKey; amount: number }[][];
-  mine: { resID: ResourceKey; amount: number }[][];
-  config: Partial<Record<LawID, LawType>>;
-  history: LawID[][];
-  lower: LawBound | null;
-  higher: LawBound | null;
-  bonus: {
-    limit: number;
-    law: number;
-  };
-};
+useLawsStore.subscribe((state, prev) => {
+  if (
+    state.history !== prev.history ||
+    state.resource !== prev.resource ||
+    state.mine !== prev.mine ||
+    state.bonus.law !== prev.bonus.law
+  ) {
+    patchUp({
+      history: state.history,
+      resource: state.resource,
+      mine: state.mine,
+      bonus: { law: state.bonus.law },
+    });
+  }
+});
 
-type Action = {
-  setHistoryIDX: (historyIDX: number) => void;
-  setBracket: (lower: LawBound | null, higher: LawBound | null) => void;
-  setConfig: (config: Partial<Record<LawID, LawType>>) => void;
-  addLaw: (lawID: LawID) => void;
-  setBonus: (id: "limit", value: number) => void;
-  reset: (arg: "all" | "curr-day") => void;
-};
+useLawsStore.persist.onFinishHydration((state) => {
+  patchUp({
+    history: state.history,
+    resource: state.resource,
+    mine: state.mine,
+    bonus: { law: state.bonus.law },
+  });
+});

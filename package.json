@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:local": "PUBLIC_URL=http://localhost:8085/ pnpm serve",
+    "format": "biome format --write",
+    "lint": "biome lint",
+    "check": "biome check",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "serve": "npm run build && npm run preview",
-    "deploy": "npm run build && wrangler deploy"
+    "serve": "pnpm run build && pnpm run preview",
+    "deploy": "pnpm run build && wrangler deploy"
   },
   "dependencies": {
     "@biomejs/biome": "2.4.5",
