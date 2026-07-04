@@ -65,6 +65,10 @@ const Law = ({ law, factionID }: { law: LawType; factionID: FactionID }) => {
         className={classNames}
         onClick={onClick}
         data-testid={`law-${law.id}`}
+        data-level={lawLvl}
+        data-max={law.max}
+        data-locked={isDisabled}
+        data-unaffordable={isUnaffordable}
       >
         <div className={css.dots}>
           {dots.map((dot) => (

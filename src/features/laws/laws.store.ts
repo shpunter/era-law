@@ -232,5 +232,6 @@ useLawsStore.persist.onFinishHydration((state) => {
     resource: state.resource,
     mine: state.mine,
     bonus: { law: state.bonus.law },
+    hydrated: true,
   });
 });

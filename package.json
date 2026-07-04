@@ -11,6 +11,8 @@
     "check": "biome check",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
     "serve": "pnpm run build && pnpm run preview",
     "deploy": "pnpm run build && wrangler deploy"
   },
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@module-federation/vite": "^1.4.1",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^25.9.2",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

@@ -60,7 +60,7 @@ export default function App() {
   }, [reset]);
 
   return (
-    <div className={css.laws}>
+    <div className={css.laws} data-faction={faction}>
       <div className={css.scroll}>
         <div className={`${css.side} ${css.left}`}>
           {layout.left.map((group) => (
