@@ -217,7 +217,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 0,
       title: "Hive Offsprings I",
-      description: () => `Summoned Fire Larvae deal +100% Damage on death.`,
+      description: () => `Summoned Fire Larvae deal +50% Damage on death.`,
     },
     l101: {
       id: "l101",
@@ -293,7 +293,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 15,
       title: "Hive Offsprings II",
-      description: () => `Summoned Fire Larvae attack twice.`,
+      description: () => `Summoned Fire Larvae provoke adjacent enemies to attack them over other units.`,
     },
     l301: {
       id: "l301",
@@ -348,7 +348,7 @@ export const LAWS = {
       limit: 50,
       title: "Hive Offsprings III",
       description: () =>
-        `Summoned Fire Larvae provoke adjacent enemies to attack them over other units.`,
+        `Summoned Fire Larvae attack twice.`,
     },
   },
   schism: {
@@ -381,14 +381,14 @@ export const LAWS = {
     },
     l020: {
       id: "l020",
-      cost: [1, 1],
-      max: 2,
+      cost: [2, 2, 2],
+      max: 3,
       img: "l020.webp",
       incomeType: "once",
       limit: 0,
       title: "Depths of Mind",
       description: ({ lvl }: LVL) =>
-        `Your Schism heroes restore +${Math.min(20, lvl * 10)}% mana each morning.`,
+        `Your Schism heroes restore +${Math.min(15, lvl * 5)}% mana each morning.`,
     },
     l001: {
       id: "l001",
@@ -404,13 +404,13 @@ export const LAWS = {
     l011: {
       id: "l011",
       img: "l011.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "once",
       limit: 0,
       title: "Unfrozen Strength I",
-      description: ({ lvl }: LVL) =>
-        `Tier-1 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-1 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense.`,
     },
     l021: {
       id: "l021",
@@ -498,24 +498,24 @@ export const LAWS = {
     l121: {
       id: "l121",
       img: "l121.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "none",
       limit: 5,
       title: "Unfrozen Strength II",
-      description: ({ lvl }: LVL) =>
-        `Tier-2 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-2 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack,10% of their Defense and Knowledge as Defense.`,
     },
     l131: {
       id: "l131",
       img: "l131.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "none",
       limit: 5,
       title: "Unfrozen Strength III",
-      description: ({ lvl }: LVL) =>
-        `Tier-3 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-3 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense.`,
     },
     l200: {
       id: "l200",
@@ -533,9 +533,9 @@ export const LAWS = {
       description: () =>
         `Provides a one-time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted.`,
     },
-    l210: {
-      id: "l210",
-      img: "l210.webp",
+    l220: {
+      id: "l220",
+      img: "l220.webp",
       cost: [3],
       max: 1,
       incomeType: "none",
@@ -543,16 +543,16 @@ export const LAWS = {
       title: "Otherworldly Magic",
       description: () => `Arcane spells of your heroes gain 1 level.`,
     },
-    l220: {
-      id: "l220",
-      img: "l220.webp",
-      cost: [2, 2],
-      max: 2,
+    l230: {
+      id: "l230",
+      img: "l230.webp",
+      cost: [2, 2, 2],
+      max: 3,
       incomeType: "none",
       limit: 15,
       title: "Call of the Deep",
       description: ({ lvl }: LVL) =>
-        `Your Schism heroes’ spells and friendly creatures’ abilities summon +${Math.min(20, lvl * 10)}% units.`,
+        `Your Schism heroes’ spells and friendly creatures’ abilities summon +${Math.min(30, lvl * 10)}% units.`,
     },
     l201: {
       id: "l201",
@@ -568,18 +568,18 @@ export const LAWS = {
     l211: {
       id: "l211",
       img: "l211.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "none",
       limit: 15,
       title: "Unfrozen Strength IV",
-      description: ({ lvl }: LVL) =>
-        `Tier-4 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-4 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense.`,
     },
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: [3, 3],
+      cost: [4, 4],
       max: 2,
       incomeType: "none",
       limit: 15,
@@ -587,9 +587,9 @@ export const LAWS = {
       description: ({ lvl }: LVL) =>
         `All effects applied by your heroes and friendly creatures last ${Math.min(2, lvl)} additional round(s).`,
     },
-    l300: {
-      id: "l300",
-      img: "l300.webp",
+    l210: {
+      id: "l210",
+      img: "l210.webp",
       cost: [3, 3],
       max: 2,
       incomeType: "daily",
@@ -602,20 +602,20 @@ export const LAWS = {
       description: ({ lvl }: LVL) =>
         `Your cities produce +${Math.min(2, lvl)} Wood and Ore.`,
     },
-    l310: {
-      id: "l310",
-      img: "l310.webp",
-      cost: [2, 2, 2],
+    l300: {
+      id: "l300",
+      img: "l300.webp",
+      cost: [3, 3, 3],
       max: 3,
       incomeType: "none",
       limit: 30,
       title: "Planar Explorers",
       description: ({ lvl }: LVL) =>
-        `Produces ${Math.min(750, lvl * 250)} Astrology points daily.`,
+        `Produces ${Math.min(1500, lvl * 500)} Astrology points daily.`,
     },
-    l320: {
-      id: "l320",
-      img: "l320.webp",
+    l310: {
+      id: "l310",
+      img: "l310.webp",
       cost: [3],
       max: 1,
       incomeType: "none",
@@ -624,9 +624,9 @@ export const LAWS = {
       description: () =>
         `The cooldowns of all the battle spells of enemy heroes are increased by 1 round(s).`,
     },
-    l330: {
-      id: "l330",
-      img: "l330.webp",
+    l320: {
+      id: "l320",
+      img: "l320.webp",
       cost: [6],
       max: 1,
       incomeType: "none",
@@ -660,24 +660,24 @@ export const LAWS = {
     l321: {
       id: "l321",
       img: "l321.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "none",
       limit: 30,
       title: "Unfrozen Strength V",
-      description: ({ lvl }: LVL) =>
-        `Tier-5 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-5 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense.`,
     },
     l331: {
       id: "l331",
       img: "l331.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "none",
       limit: 30,
       title: "Unfrozen Strength VI",
-      description: ({ lvl }: LVL) =>
-        `Tier-6 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-6 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense.`,
     },
     l400: {
       id: "l400",
@@ -706,10 +706,10 @@ export const LAWS = {
       description: () =>
         `Each round of battle, the enemy loses 1 Focus Charge(s).`,
     },
-    l420: {
-      id: "l420",
-      img: "l420.webp",
-      cost: [5],
+    l330: {
+      id: "l330",
+      img: "l330.webp",
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -720,7 +720,7 @@ export const LAWS = {
     l430: {
       id: "l430",
       img: "l430.webp",
-      cost: [3],
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -736,23 +736,23 @@ export const LAWS = {
       limit: 50,
       title: "Elite Abyssal Envoys",
       description: ({ lvl }: LVL) =>
-        `Abyssal Envoy growth in your cities increases by ${Math.min(2, lvl)}. They gain 3 Speed and Initiative.`,
+        `Abyssal Envoy growth in your cities increases by ${Math.min(2, lvl)}. They gain 2 Speed and Initiative.`,
     },
     l411: {
       id: "l411",
       img: "l411.webp",
-      cost: [2, 2],
-      max: 2,
+      cost: [2],
+      max: 1,
       incomeType: "none",
       limit: 50,
       title: "Unfrozen strength VII",
-      description: ({ lvl }: LVL) =>
-        `Tier-7 friendly creatures gain ${Math.min(20, lvl * 10)}% of their hero’s Attack and Spell Power as Attack, ${Math.min(20, lvl * 10)}% of their Defense and Knowledge as Defense.`,
+      description: () =>
+        `Tier-7 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense.`,
     },
     l421: {
       id: "l421",
       img: "l421.webp",
-      cost: [4],
+      cost: [5],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -792,7 +792,7 @@ export const LAWS = {
     },
     l020: {
       id: "l020",
-      cost: [2, 2],
+      cost: [3, 3],
       max: 2,
       img: "l020.webp",
       incomeType: "none",
@@ -817,7 +817,7 @@ export const LAWS = {
     },
     l011: {
       id: "l011",
-      cost: [3],
+      cost: [2],
       max: 1,
       img: "l011.webp",
       incomeType: "none",
@@ -997,7 +997,7 @@ export const LAWS = {
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: [5],
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 15,
@@ -1028,7 +1028,7 @@ export const LAWS = {
     l310: {
       id: "l310",
       img: "l310.webp",
-      cost: [4, 4],
+      cost: [5, 5],
       max: 2,
       incomeType: "none",
       limit: 30,
@@ -1113,17 +1113,17 @@ export const LAWS = {
     l410: {
       id: "l410",
       img: "l410.webp",
-      cost: [5],
-      max: 1,
+      cost: [4, 4],
+      max: 2,
       incomeType: "none",
       limit: 50,
       title: "Magical Education",
-      description: () => `Spells of your heroes gain 1 level(s).`,
+      description: ({lvl}: LVL) => `Spells of your heroes gain ${Math.min(2, lvl)} level(s).`,
     },
     l420: {
       id: "l420",
       img: "l420.webp",
-      cost: [4],
+      cost: [3],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -1366,7 +1366,7 @@ export const LAWS = {
       limit: 30,
       title: "Fertile Ground",
       description: ({ lvl }: LVL) =>
-        `Creature growth of your external dwellings increases by +${Math.min(100, lvl * 50)}%.`,
+        `Creature growth of your external dwellings increases by +${Math.min(200, lvl * 100)}%.`,
     },
     l310: {
       id: "l310",
@@ -1420,7 +1420,7 @@ export const LAWS = {
       limit: 30,
       title: "Elite Qilin",
       description: ({ lvl }: LVL) =>
-        `Qilin growth in your cities increases by 1. They deal +${Math.min(6, lvl * 2)} Damage.`,
+        `Qilin growth in your cities increases by 1. They deal +${Math.min(9, lvl * 3)} Damage.`,
     },
     l321: {
       id: "l321",
@@ -1457,7 +1457,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 50,
       title: "Force of Nature",
-      description: () => `Your Heroic Strikes deal +10 basic Damage.`,
+      description: () => `Your Heroic Strikes deal +20 basic Damage.`,
     },
     l420: {
       id: "l420",
@@ -1468,7 +1468,7 @@ export const LAWS = {
       limit: 50,
       title: "Children of the Wild",
       description: ({ lvl }: LVL) =>
-        `Your Grove heroes gain ${Math.min(2, lvl)} sight radius and ${Math.min(20, lvl * 10)} Movement points.`,
+        `Your Grove heroes gain ${Math.min(4, lvl * 2)} sight radius and ${Math.min(20, lvl * 15)} Movement points.`,
     },
     l430: {
       id: "l430",
@@ -1554,7 +1554,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 0,
       title: "Animate Dead I",
-      description: () => "Your heroes gain 2% Necromancy Power.",
+      description: () => "Your heroes gain +500 maximum Necromantic Energy.",
     },
     l030: {
       id: "l030",
@@ -1598,7 +1598,7 @@ export const LAWS = {
       limit: 0,
       title: "Black Death",
       description: ({ lvl }: LVL) =>
-        `Enemy creatures take +${Math.min(100, lvl * 50)}% from Damage-over-time effects.`,
+        `Enemy creatures take +${Math.min(50, lvl * 25)}% from Damage-over-time effects.`,
     },
     l100: {
       id: "l100",
@@ -1633,7 +1633,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 5,
       title: "Animate Dead II",
-      description: () => `Your heroes gain +250 maximum Necromantic Energy.`,
+      description: () => `Your heroes gain +2.5% Necromancy Power.`,
     },
     l130: {
       id: "l130",
@@ -1644,7 +1644,7 @@ export const LAWS = {
       limit: 5,
       title: "Laws of the Immortals",
       description: ({ lvl }: LVL) =>
-        `Your cities generate +${Math.min(60, lvl * 20)}% Law points.`,
+        `Your cities generate +${Math.min(30, lvl * 10)}% Law points.`,
     },
     l101: {
       id: "l101",
@@ -1713,7 +1713,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 15,
       title: "Animate Dead III",
-      description: () => `Your heroes gain 3% Necromancy Power.`,
+      description: () => `Your heroes gain +500 maximum Necromantic Energy.`,
     },
     l230: {
       id: "l230",
@@ -1751,13 +1751,12 @@ export const LAWS = {
     l221: {
       id: "l221",
       img: "l221.webp",
-      cost: [3, 3],
-      max: 2,
+      cost: [6],
+      max: 1,
       incomeType: "none",
       limit: 15,
       title: "Bloodthirst",
-      description: ({ lvl }: LVL) =>
-        `Vampirism of friendly creatures increases by ${Math.min(100, lvl * 50)}%.`,
+      description: () => `Vampirism of friendly creatures increases by 60%.`,
     },
     l300: {
       id: "l300",
@@ -1789,7 +1788,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 30,
       title: "Animate Dead IV",
-      description: () => `Your heroes gain +250 maximum Necromantic Energy.`,
+      description: () => `Your heroes gain +2.5% Necromancy Power.`,
     },
     l301: {
       id: "l301",
@@ -1859,7 +1858,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 50,
       title: "Animate Dead V",
-      description: () => `Your heroes gain 4% Necromancy Power.`,
+      description: () => `Your heroes gain +500 maximum Necromantic Energy.`,
     },
     l401: {
       id: "l401",
@@ -1904,8 +1903,8 @@ export const LAWS = {
     l010: {
       id: "l010",
       img: "l010.webp",
-      cost: [3, 3],
-      max: 2,
+      cost: [4],
+      max: 1,
       incomeType: "none",
       limit: 0,
       title: "Training: Scouting",
@@ -2033,7 +2032,7 @@ export const LAWS = {
     l131: {
       id: "l131",
       img: "l131.webp",
-      cost: [5],
+      cost: [6],
       max: 1,
       incomeType: "none",
       limit: 5,
@@ -2249,7 +2248,7 @@ export const LAWS = {
     l421: {
       id: "l421",
       img: "l421.webp",
-      cost: [3],
+      cost: [4],
       max: 1,
       incomeType: "none",
       limit: 50,
@@ -2290,9 +2289,9 @@ export const LAW_LAYOUT: {
     left: [
       ["l000", "l010", "l020"],
       ["l100", "l110", "l120", "l130"],
-      ["l200", "l210", "l220"],
+      ["l200", "l210", "l220", "l230"],
       ["l300", "l310", "l320", "l330"],
-      ["l400", "l410", "l420", "l430"],
+      ["l400", "l410", "l430"],
     ],
     right: [
       ["l001", "l011", "l021"],
