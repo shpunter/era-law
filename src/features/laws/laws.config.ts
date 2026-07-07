@@ -293,7 +293,8 @@ export const LAWS = {
       incomeType: "none",
       limit: 15,
       title: "Hive Offsprings II",
-      description: () => `Summoned Fire Larvae provoke adjacent enemies to attack them over other units.`,
+      description: () =>
+        `Summoned Fire Larvae provoke adjacent enemies to attack them over other units.`,
     },
     l301: {
       id: "l301",
@@ -347,8 +348,7 @@ export const LAWS = {
       incomeType: "none",
       limit: 50,
       title: "Hive Offsprings III",
-      description: () =>
-        `Summoned Fire Larvae attack twice.`,
+      description: () => `Summoned Fire Larvae attack twice.`,
     },
   },
   schism: {
@@ -1118,7 +1118,8 @@ export const LAWS = {
       incomeType: "none",
       limit: 50,
       title: "Magical Education",
-      description: ({lvl}: LVL) => `Spells of your heroes gain ${Math.min(2, lvl)} level(s).`,
+      description: ({ lvl }: LVL) =>
+        `Spells of your heroes gain ${Math.min(2, lvl)} level(s).`,
     },
     l420: {
       id: "l420",
