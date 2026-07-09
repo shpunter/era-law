@@ -597,7 +597,7 @@ export const LAWS = {
         wood: 1,
         ore: 1,
       },
-      limit: 30,
+      limit: 15,
       title: "Survival Conditions",
       description: ({ lvl }: LVL) =>
         `Your cities produce +${Math.min(2, lvl)} Wood and Ore.`,
@@ -712,7 +712,7 @@ export const LAWS = {
       cost: [4],
       max: 1,
       incomeType: "none",
-      limit: 50,
+      limit: 30,
       title: "The Abyss Stares Back",
       description: () =>
         `Your Schism heroes start each day with maximum Communion level.`,
